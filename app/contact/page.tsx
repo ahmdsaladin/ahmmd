@@ -198,9 +198,15 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl mb-4">Featured Collections</h2>
-            <p className="text-primary max-w-2xl mx-auto">
-              Explore some of my most popular photography collections from around the world
+            <h2 className="text-3xl md:text-4xl mb-6">The Craft of Meaningful Design</h2>
+            <p className="text-primary-secondary mb-6">
+              Every poster, logo, interface, and product I create is a story—shaped by intention, guided by rhythm, and designed to connect.
+            </p>
+            <p className="text-primary-secondary mb-6">
+              My work spans across visual identities, editorial layouts, and digital experiences. From the texture of print to the flow of user journeys, I focus on clarity, emotion, and presence in every detail.
+            </p>
+            <p className="text-primary-secondary mb-8">
+              Explore a portfolio where each project speaks with its own voice—unified by a commitment to elegance, function, and depth.
             </p>
           </motion.div>
           <FeaturedCollections />

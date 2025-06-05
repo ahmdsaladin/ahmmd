@@ -1,12 +1,12 @@
 {
-  "name": "x100-nextjs-theme",
-  "version": "1.0.0",
+  "name": "ahmed-portfolio",
+  "version": "2.0.0",
   "private": true,
-  "author": "Travis Lord <hi@travislord.au>",
+  "author": "Ahmd Saladin>",
   "scripts": {
     "validate-images": "ts-node scripts/validate-images.ts",
-    "dev": "yarn validate-images --dry-run && next dev",
-    "build": "yarn validate-images --dry-run && next build",
+    "dev": "npm run validate-images -- --dry-run && next dev",
+    "build": "npm run validate-images -- --dry-run && next build",
     "start": "next start",
     "lint": "next lint",
     "predev": "ts-node scripts/validate-images.ts",

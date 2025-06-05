@@ -13,8 +13,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "X100 | Next.js Theme for Photographers",
-  description: "A Next.js portfolio for professional photographers, designed to flawlessly showcase powerful visual stories.",
+  title: "Ahmd Saladin | Design Architect portfolio",
+  description: "A Design Architect working across visual identity, product, and interface design. My work spans the tactile world of posters and magazines to the dynamic realms of UI/UX. I believe design should not only function—it should resonate. Every layout, every pixel, every interaction is a moment of dialogue between object and observer.",
   // Set initial theme-color meta tag for iOS Safari
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },

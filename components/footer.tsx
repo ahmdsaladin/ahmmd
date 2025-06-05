@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 mb-4">
             {/* <Logo /> */}
             <Link href="/" className="font-old-london text-2xl font-bold inline-block text-foreground">
-              X100
+              Ahmd
             </Link>
           </div>
           <p className="text-muted-foreground max-w-md mb-6 max-w-xs">
@@ -142,7 +142,7 @@ export default function Footer() {
           <h3 className="section-title text-2xl mb-4">Contact</h3>
           <ul className="space-y-2 text-muted-foreground">
             <h4 className="text-primary">Email</h4>
-            <a href="mailto:contact@x100.com"><li>contact@x100.com</li></a> 
+            <a href="mailto:contact@ahmd.com"><li>contact@ahmd.com</li></a> 
             {/* <li>Phone: +1 (555) 123-4567</li> */}
             <h4 className="text-primary">Location</h4>
             <li>39.1569° S, 175.6321° E</li>

@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'X100 Photographer Portfolio',
-    short_name: 'X100',
-    description: 'A Next.js portfolio for professional photographers, designed to flawlessly showcase powerful visual stories.',
+    name: 'Ahmd Photographer Portfolio',
+    short_name: 'Ahmd',
+    description: 'A Design Architect working across visual identity, product, and interface design. My work spans the tactile world of posters and magazines to the dynamic realms of UI/UX. I believe design should not only function—it should resonate. Every layout, every pixel, every interaction is a moment of dialogue between object and observer.',
     start_url: '/',
     display: 'standalone',
     background_color: '#000000',
@@ -13,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         src: '/favicon.ico',
         sizes: 'any',
-        type: 'image/x-icon',
+        type: 'public\Logo.png',
       },
     ],
   }

@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        oldLondon: ["var(--font-old-london)"],
+        sans: ['var(--font-sans)'],
+        heading: ['Casta-Black', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

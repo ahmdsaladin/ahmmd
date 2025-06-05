@@ -31,16 +31,18 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl mb-6">The Art of Visual Storytelling</h2>
+            <h2 className="text-3xl md:text-4xl mb-6">The Craft of Meaningful Design</h2>
             <p className="text-primary-secondary mb-6">
-              Every photograph tells a story, captures an emotion, and preserves a moment in time. My work focuses on
-              finding beauty in both grand landscapes and subtle details.
+              Every poster, logo, interface, and product I create is a story—shaped by intention, guided by rhythm, and designed to connect.
+            </p>
+            <p className="text-primary-secondary mb-6">
+              My work spans across visual identities, editorial layouts, and digital experiences. From the texture of print to the flow of user journeys, I focus on clarity, emotion, and presence in every detail.
             </p>
             <p className="text-primary-secondary mb-8">
-              Explore my collections from around the world, each with its own unique perspective and narrative.
+              Explore a portfolio where each project speaks with its own voice—unified by a commitment to elegance, function, and depth.
             </p>
             <AnimatedButton href="/about" variant="outline" icon={<ArrowRight size={16} />}>
-              Learn More About The Journey
+              The Architect Behind the Work
             </AnimatedButton>
           </motion.div>
           <motion.div
@@ -51,8 +53,8 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <Image
-              src="/Morocco/morocco-9.webp?height=1000&width=800"
-              alt="Photographer at work"
+              src="/POTERS/posters-1.jpg"
+              alt="Designer at work"
               fill
               className="object-cover"
             />

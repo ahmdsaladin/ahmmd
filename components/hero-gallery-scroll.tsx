@@ -6,20 +6,31 @@ import AnimatedButton from "@/components/animated-button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { useEffect, useState } from "react"
 
-const IMAGES = [
-  "/Morocco/cover.webp",
-  "/new zealand/cover.jpg",
-  "/Tokyo/cover.jpg",
-  "/Bali/cover.jpeg",
-  "/Iceland/cover.jpg",
-]
+// Function to get random photos from POTERS directory
+const getRandomPhotos = () => {
+  const photos = [
+    "/POTERS/1.jpg",
+    "/POTERS/2.jpg",
+    "/POTERS/3.jpg",
+    "/POTERS/4.jpg",
+    "/POTERS/5.jpg",
+  ]
+  return photos.sort(() => Math.random() - 0.5).slice(0, 5)
+}
 
 export function HeroGalleryScroll() {
+  const [randomImages, setRandomImages] = useState<string[]>([])
+
+  useEffect(() => {
+    setRandomImages(getRandomPhotos())
+  }, [])
+
   return (
     <ContainerScroll className="h-[350vh]">
       <BentoGrid className="sticky left-0 top-0 z-0 h-screen w-full p-4">
-        {IMAGES.map((imageUrl, index) => (
+        {randomImages.map((imageUrl, index) => (
           <BentoCell
             key={index}
             className="overflow-hidden rounded-3xl shadow-xl"
@@ -40,7 +51,7 @@ export function HeroGalleryScroll() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          X100
+          Ahmd
         </motion.h1>
         <motion.p
           className="my-6 max-w-xl text-primary "
