@@ -13,7 +13,7 @@ const IMAGES = [
   "/Tokyo/cover.png",
   "/Bali/cover.png",
   "/Iceland/cover.png",
-  "/Urban Portraits/cover.jpg"
+  "/Urban Portraits/cover.png"
 ]
 
 export function HeroGalleryScroll() {
