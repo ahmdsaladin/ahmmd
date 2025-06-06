@@ -15,9 +15,9 @@ const collectionFolders: Record<string, string> = {
   'bali': 'Bali',
   'morocco': 'Morocco',
   'tokyo': 'Tokyo',
-  'new-zealand': 'new zealand',
+  'new-zealand': 'new_zealand',
   'iceland': 'Iceland',
-  'urban-portraits': 'Urban Portraits'
+  'urban-portraits': 'Urban_Portraits'
 } as const
 
 // Collection image counts and formats
@@ -107,7 +107,7 @@ const collections: Collection[] = [
     description: "Breathtaking landscapes from across New Zealand",
     fullDescription:
       "New Zealand offers some of the most diverse and dramatic landscapes in the world. From the snow-capped Southern Alps to the pristine beaches of the Coromandel Peninsula, this collection captures the raw beauty and majesty of Aotearoa.",
-    coverImage: getCoverImagePath("new zealand"),
+    coverImage: getCoverImagePath("new_zealand"),
     tags: ["Nature", "Landscape", "Mountains"],
     featured: true,
     photos: getCollectionImages("new-zealand"),
@@ -167,7 +167,7 @@ const collections: Collection[] = [
     description: "Street photography and urban life around the world",
     fullDescription:
       "This collection focuses on the human element within urban environments. Through candid street photography and environmental portraits, it captures the diversity, energy, and stories of city dwellers across different cultures and metropolises around the world.",
-    coverImage: getCoverImagePath("Urban Portraits"),
+    coverImage: getCoverImagePath("Urban_Portraits"),
     tags: ["Urban", "People", "Street"],
     featured: false,
     photos: getCollectionImages("urban-portraits"),

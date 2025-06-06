@@ -9,11 +9,11 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 const IMAGES = [
   "/Morocco/cover.png",
-  "/new zealand/cover.png",
+  "/new_zealand/cover.png",
   "/Tokyo/cover.png",
   "/Bali/cover.png",
   "/Iceland/cover.png",
-  "/Urban Portraits/cover.png"
+  "/Urban_Portraits/cover.png"
 ]
 
 export function HeroGalleryScroll() {
