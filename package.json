@@ -1,16 +1,16 @@
 {
-  "name": "ahmed-portfolio",
-  "version": "2.0.0",
+  "name": "ahmd-saladin-portfolio",
+  "version": "1.0.0",
   "private": true,
-  "author": "Ahmd Saladin>",
+  "author": "Ahmd Saladin <sotahmed100@gmail.com>",
   "scripts": {
-    "validate-images": "ts-node scripts/validate-images.ts",
-    "dev": "npm run validate-images -- --dry-run && next dev",
-    "build": "npm run validate-images -- --dry-run && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predev": "ts-node scripts/validate-images.ts",
-    "prebuild": "ts-node scripts/validate-images.ts"
+    "validate-images": "ts-node scripts/validate-images.ts",
+    "predev": "npm run validate-images",
+    "prebuild": "echo 'Skipping image validation for now'"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

@@ -1,32 +1,52 @@
 const fs = require('fs');
 const path = require('path');
 
-// Collection image counts and formats for new collections only
+// Collection image counts and formats
 const collectionImages: Record<string, { count: number; formats: string[] }> = {
-  'posters': { count: 0, formats: ['jpg', 'jpeg'] }, // Set count as needed
-  'products': { count: 0, formats: ['jpg', 'jpeg'] }, // Set count as needed
-  'logos': { count: 0, formats: ['png'] } // Set count as needed
+  'bali': { 
+    count: 16,
+    formats: ['jpeg', 'jpg']  // Bali has images in both formats
+  },
+  'morocco': { 
+    count: 21,  // Updated count based on actual files
+    formats: ['webp']
+  },
+  'tokyo': { 
+    count: 20,  // Updated count based on actual files
+    formats: ['jpg']
+  },
+  'new-zealand': { 
+    count: 18,
+    formats: ['jpg']
+  },
+  'iceland': { 
+    count: 14,
+    formats: ['jpg']
+  },
+  'urban-portraits': { 
+    count: 16,
+    formats: ['jpg']
+  }
 }
 
 // Collection format mapping for cover images
 const collectionFormats: Record<string, string> = {
-  'posters': 'jpg',
-  'products': 'jpg',
-  'logos': 'png'
+  'bali': 'png',
+  'morocco': 'png',
+  'tokyo': 'png',
+  'new-zealand': 'png',
+  'iceland': 'png',
+  'urban-portraits': 'png'
 }
 
 // Collection folder name mapping (for case sensitivity)
 const collectionFolders: Record<string, string> = {
-  'posters': 'POSTERS',
-  'products': 'products',
-  'logos': 'logos'
-}
-
-// Collection titles
-const collectionTitles = {
-  'posters': 'Posters',
-  'products': 'Products',
-  'logos': 'Logos'
+  'bali': 'Bali',
+  'morocco': 'Morocco',
+  'tokyo': 'Tokyo',
+  'new-zealand': 'new zealand',
+  'iceland': 'Iceland',
+  'urban-portraits': 'Urban Portraits'
 }
 
 interface ValidationResult {
@@ -156,9 +176,8 @@ function validateImages(dryRun: boolean = false): ValidationResult {
 }
 
 // Parse command line arguments
-// const args = process.argv.slice(2)
-// const dryRun = args.includes('--dry-run')
-const dryRun = true;
+const args = process.argv.slice(2)
+const dryRun = args.includes('--dry-run')
 
 // Run the validation
-validateImages(dryRun) 
+validateImages(dryRun)

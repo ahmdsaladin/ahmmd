@@ -1,33 +1,50 @@
-import type { Collection, Photo } from "./types"
 
 // Collection format mapping
-export const collectionFormats = {
-  'posters': 'jpg',
-  'products': 'jpg',
-  'logos': 'png',
-}
+const collectionFormats: Record<string, string> = {
+  'bali': 'jpeg',
+  'morocco': 'webp',
+  'tokyo': 'jpg',
+  'new-zealand': 'jpg',
+  'iceland': 'jpg',
+  'urban-portraits': 'jpg'
+} as const
 
 // Collection folder name mapping (for case sensitivity)
 const collectionFolders: Record<string, string> = {
-  'posters': 'POTERS',
-  'products': 'products',
-  'logos': 'logos',
+  'bali': 'Bali',
+  'morocco': 'Morocco',
+  'tokyo': 'Tokyo',
+  'new-zealand': 'new zealand',
+  'iceland': 'Iceland',
+  'urban-portraits': 'Urban Portraits'
 } as const
 
 // Collection image counts and formats
 const collectionImages: Record<string, { count: number; formats: string[] }> = {
-  'posters': { 
+  'bali': { 
+    count: 16,
+    formats: ['jpeg', 'jpg']
+  },
+  'morocco': { 
+    count: 21,
+    formats: ['webp']
+  },
+  'tokyo': { 
+    count: 20,
+    formats: ['jpg']
+  },
+  'new-zealand': { 
+    count: 18,
+    formats: ['jpg']
+  },
+  'iceland': { 
+    count: 14,
+    formats: ['jpg']
+  },
+  'urban-portraits': { 
     count: 16,
     formats: ['jpg']
-  },
-  'products': { 
-    count: 21,
-    formats: ['jpg']
-  },
-  'logos': { 
-    count: 20,
-    formats: ['png']
-  },
+  }
 } as const
 
 // Common metadata for photos
@@ -60,7 +77,7 @@ function getCollectionImages(collectionSlug: string): Photo[] {
   
   return Array.from({ length: collectionInfo.count }, (_, i) => {
     const index = i + 1
-    const format = collectionSlug === 'posters' && index >= 10 && index <= 15 ? 'jpg' : collectionFormats[collectionSlug]
+    const format = collectionSlug === 'bali' && index >= 10 && index <= 15 ? 'jpg' : collectionFormats[collectionSlug]
     const imagePath = `/${folderName}/${collectionSlug}-${index}.${format}`
     const dimensions = aspectRatios[index % aspectRatios.length]
 
@@ -83,35 +100,83 @@ function getCoverImagePath(folderName: string): string {
 }
 
 // Collections data
-export const collections = {
-  'posters': {
-    title: "Posters Collection",
-    description: "A collection of stunning posters",
-    longDescription: "A curated collection of artistic and professional posters showcasing various designs and styles.",
-    coverImage: getCoverImagePath("POTERS"),
-    slug: "posters",
-    photos: getCollectionImages("posters"),
+const collections: Collection[] = [
+  {
+    id: "1",
+    slug: "new-zealand",
+    title: "New Zealand Landscapes",
+    description: "Breathtaking landscapes from across New Zealand",
+    fullDescription:
+      "New Zealand offers some of the most diverse and dramatic landscapes in the world. From the snow-capped Southern Alps to the pristine beaches of the Coromandel Peninsula, this collection captures the raw beauty and majesty of Aotearoa.",
+    coverImage: getCoverImagePath("new zealand"),
+    tags: ["Nature", "Landscape", "Mountains"],
+    featured: true,
+    photos: getCollectionImages("new-zealand"),
   },
-  'products': {
-    title: "Products Gallery",
-    description: "Showcasing our product designs",
-    longDescription: "A showcase of our product designs, highlighting innovation and creativity in product development.",
-    coverImage: getCoverImagePath("products"),
-    slug: "products",
-    photos: getCollectionImages("products"),
+  {
+    id: "2",
+    slug: "tokyo",
+    title: "Japan: Urban & Traditional",
+    description: "The contrast between modern and traditional Japan",
+    fullDescription:
+      "Japan presents a fascinating juxtaposition of ultramodern urban environments and serene traditional settings. This collection explores the visual dialogue between Tokyo's neon-lit streets and the tranquil temples of Kyoto, capturing Japan's unique cultural identity.",
+    coverImage: getCoverImagePath("Tokyo"),
+    tags: ["Urban", "Culture", "Architecture"],
+    featured: true,
+    photos: getCollectionImages("tokyo"),
   },
-  'logos': {
-    title: "Logo Designs",
-    description: "Professional logo designs",
-    longDescription: "A collection of professional logo designs, demonstrating brand identity and creative solutions.",
-    coverImage: getCoverImagePath("logos"),
-    slug: "logos",
-    photos: getCollectionImages("logos"),
+  {
+    id: "3",
+    slug: "bali",
+    title: "Bali: Island of the Gods",
+    description: "Tropical paradise and cultural heritage of Bali",
+    fullDescription:
+      "Known as the Island of the Gods, Bali captivates with its dramatic landscapes, vibrant cultural heritage, and spiritual atmosphere. This collection documents the island's terraced rice fields, ancient temples, pristine beaches, and the warmth of Balinese people.",
+    coverImage: getCoverImagePath("Bali"),
+    tags: ["Tropical", "Culture", "Nature"],
+    featured: true,
+    photos: getCollectionImages("bali"),
   },
-}
+  {
+    id: "4",
+    slug: "iceland",
+    title: "Iceland: Land of Fire and Ice",
+    description: "Dramatic landscapes of Iceland",
+    fullDescription:
+      "Iceland's otherworldly landscapes showcase nature's raw power and beauty. This collection captures the country's dramatic contrasts: steaming geothermal areas alongside massive glaciers, thundering waterfalls cutting through black lava fields, and the ethereal Northern Lights dancing above it all.",
+    coverImage: getCoverImagePath("Iceland"),
+    tags: ["Nature", "Landscape", "Winter"],
+    featured: false,
+    photos: getCollectionImages("iceland"),
+  },
+  {
+    id: "5",
+    slug: "morocco",
+    title: "Colors of Morocco",
+    description: "Vibrant markets, architecture, and desert landscapes",
+    fullDescription:
+      "Morocco is a feast for the senses, with its vibrant colors, intricate patterns, and diverse landscapes. This collection explores the bustling medinas, ancient kasbahs, vast Sahara dunes, and the rich cultural tapestry that makes Morocco so visually captivating.",
+    coverImage: getCoverImagePath("Morocco"),
+    tags: ["Culture", "Desert", "Architecture"],
+    featured: false,
+    photos: getCollectionImages("morocco"),
+  },
+  {
+    id: "6",
+    slug: "urban-portraits",
+    title: "Urban Portraits",
+    description: "Street photography and urban life around the world",
+    fullDescription:
+      "This collection focuses on the human element within urban environments. Through candid street photography and environmental portraits, it captures the diversity, energy, and stories of city dwellers across different cultures and metropolises around the world.",
+    coverImage: getCoverImagePath("Urban Portraits"),
+    tags: ["Urban", "People", "Street"],
+    featured: false,
+    photos: getCollectionImages("urban-portraits"),
+  },
+]
 
 // Export functions
-export const getAllCollections = (): Collection[] => Object.values(collections)
-export const getFeaturedCollections = (): Collection[] => Object.values(collections).filter(collection => collection.featured)
-export const getCollection = (slug: string): Collection | undefined => collections[slug]
-export const getAllTags = (): string[] => Array.from(new Set(Object.values(collections).flatMap(collection => collection.tags)))
+export const getAllCollections = (): Collection[] => collections
+export const getFeaturedCollections = (): Collection[] => collections.filter(collection => collection.featured)
+export const getCollection = (slug: string): Collection | undefined => collections.find(collection => collection.slug === slug)
+export const getAllTags = (): string[] => Array.from(new Set(collections.flatMap(collection => collection.tags)))

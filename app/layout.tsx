@@ -6,20 +6,84 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import SoundEffects from "@/components/sound-effects"
 import SafariThemeColor from "@/components/safari-theme-color"
+import { Viewport } from "next"
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 })
 
-export const metadata: Metadata = {
-  title: "Ahmd Saladin | Design Architect portfolio",
-  description: "A Design Architect working across visual identity, product, and interface design. My work spans the tactile world of posters and magazines to the dynamic realms of UI/UX. I believe design should not only function—it should resonate. Every layout, every pixel, every interaction is a moment of dialogue between object and observer.",
-  // Set initial theme-color meta tag for iOS Safari
+export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' }
   ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover'
+};
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Ahmd Saladin | Photographer & Visual Storyteller',
+    template: '%s | Ahmd Saladin'
+  },
+  description: 'Explore the world through my lens. Professional photographer specializing in travel, landscape, and urban photography. Based in Egypt, capturing moments worldwide.',
+  keywords: ['photography', 'travel photography', 'landscape photography', 'urban photography', 'Egypt photographer', 'visual storytelling'],
+  authors: [{ name: 'Ahmd Saladin', url: 'https://ahmdsaladin.com' }],
+  creator: 'Ahmd Saladin',
+  publisher: 'Ahmd Saladin',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://ahmdsaladin.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://ahmdsaladin.com',
+    siteName: 'Ahmd Saladin Photography',
+    title: 'Ahmd Saladin | Photographer & Visual Storyteller',
+    description: 'Explore the world through my lens. Professional photographer specializing in travel, landscape, and urban photography. Based in Egypt, capturing moments worldwide.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ahmd Saladin Photography'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ahmd Saladin | Photographer & Visual Storyteller',
+    description: 'Explore the world through my lens. Professional photographer specializing in travel, landscape, and urban photography. Based in Egypt, capturing moments worldwide.',
+    creator: '@ahmdsaladin',
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification',
+    yandex: 'your-yandex-verification',
+    yahoo: 'your-yahoo-verification',
+  },
+  category: 'photography',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

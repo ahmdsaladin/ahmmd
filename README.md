@@ -4,7 +4,7 @@
 
 A modern, responsive photography portfolio built with Next.js 15+, featuring dynamic collections, smooth animations, and a beautiful dark/light theme.
 
-I created this theme as I’ve been considering purchasing a camera recently, and it aligned with some ideas I wanted to explore. I may contribute further updates in the future, but can’t make any guarantees at this stage. Enjoy 🤙
+I created this theme as I've been considering purchasing a camera recently, and it aligned with some ideas I wanted to explore. I may contribute further updates in the future, but can't make any guarantees at this stage. Enjoy 🤙
 
 ## 🌟 Features
 
@@ -60,7 +60,11 @@ The portfolio is organized into collections:
 - Bali
 - Morocco
 
-Each collection should be placed in its corresponding folder in the `public` directory. Update image Validation /scripts/validate-images.ts
+Each collection should be placed in its corresponding folder in the `public` directory with the following structure:
+- `cover.png` - The cover image for the collection (must be PNG format)
+- `[collection-name]-[number].jpg` - The individual photos in the collection
+
+Update image validation in `/scripts/validate-images.ts` if you need to modify the collection structure.
 
 ## 🎨 Theme Customization
 
