@@ -1,12 +1,11 @@
-
 // Collection format mapping
 const collectionFormats: Record<string, string> = {
-  'bali': 'jpeg',
-  'morocco': 'webp',
-  'tokyo': 'jpg',
-  'new-zealand': 'jpg',
-  'iceland': 'jpg',
-  'urban-portraits': 'jpg'
+  'bali': 'png',
+  'morocco': 'png',
+  'tokyo': 'png',
+  'new-zealand': 'png',
+  'iceland': 'png',
+  'urban-portraits': 'png'
 } as const
 
 // Collection folder name mapping (for case sensitivity)
@@ -94,9 +93,7 @@ function getCollectionImages(collectionSlug: string): Photo[] {
 
 // Function to get cover image path
 function getCoverImagePath(folderName: string): string {
-  const collectionSlug = folderName.toLowerCase().replace(' ', '-')
-  const format = collectionFormats[collectionSlug] || 'jpg'
-  return `/${folderName}/cover.${format}`
+  return `/${folderName}/cover.png`
 }
 
 // Collections data

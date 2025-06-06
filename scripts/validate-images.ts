@@ -91,7 +91,7 @@ function validateImages(dryRun: boolean = false): ValidationResult {
     }
 
     // Check cover image
-    const coverFormat = collectionFormats[slug]
+    const coverFormat = 'png'
     const coverPath = path.join(collectionDir, `cover.${coverFormat}`)
     if (!fs.existsSync(coverPath)) {
       const error = `Cover image missing: ${folderName}/cover.${coverFormat}`
