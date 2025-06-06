@@ -1,8 +1,9 @@
 {
-  "name": "x100-nextjs-theme",
+  "name": "ahmdsaladin-portfolio",
   "version": "1.0.0",
   "private": true,
   "author": "Travis Lord <hi@travislord.au>",
+  "description": "Portfolio for Ahmd Saladin, Design Manager / Architect.",
   "scripts": {
     "validate-images": "ts-node scripts/validate-images.ts",
     "dev": "yarn validate-images --dry-run && next dev",

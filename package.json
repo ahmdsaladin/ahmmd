@@ -1,8 +1,9 @@
 {
-  "name": "ahmd-saladin-portfolio",
+  "name": "ahmdsaladin-portfolio",
   "version": "1.0.0",
   "private": true,
   "author": "Ahmd Saladin <sotahmed100@gmail.com>",
+  "description": "Portfolio for Ahmd Saladin, Design Manager / Architect.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

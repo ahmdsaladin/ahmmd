@@ -408,7 +408,7 @@ export function PhotoGallery({ photos, className }: PhotoGalleryProps) {
                     <div className="flex items-center gap-2 text-sm text-white/70">
                       <Camera size={14} />
                       {/* <span>{currentPhoto.metadata.camera}</span> */}
-                      <span>X100VI</span>
+                      <span>Ahmd Saladin</span>
                       {currentPhoto.metadata.focalLength && <span>| {currentPhoto.metadata.focalLength}</span>}
                       <span>|</span>
                       {currentPhoto.metadata.aperture && <span>| {currentPhoto.metadata.aperture}</span>}

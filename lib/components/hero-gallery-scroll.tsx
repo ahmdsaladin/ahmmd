@@ -40,7 +40,7 @@ export function HeroGalleryScroll() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          X100
+          Ahmd Saladin
         </motion.h1>
         <motion.p
           className="my-6 max-w-xl text-primary "

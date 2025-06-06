@@ -27,10 +27,10 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ahmd Saladin | Photographer & Visual Storyteller',
+    default: 'Ahmd Saladin | Design Manager / Architect',
     template: '%s | Ahmd Saladin'
   },
-  description: 'Explore the world through my lens. Professional photographer specializing in travel, landscape, and urban photography. Based in Egypt, capturing moments worldwide.',
+  description: 'Portfolio for Ahmd Saladin, Design Manager / Architect.',
   keywords: ['photography', 'travel photography', 'landscape photography', 'urban photography', 'Egypt photographer', 'visual storytelling'],
   authors: [{ name: 'Ahmd Saladin', url: 'https://ahmdsaladin.com' }],
   creator: 'Ahmd Saladin',
