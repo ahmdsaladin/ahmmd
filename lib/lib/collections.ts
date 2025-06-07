@@ -2,50 +2,29 @@ import type { Collection, Photo } from "./types"
 
 // Collection format mapping
 const collectionFormats: Record<string, string> = {
-  'bali': 'png',
-  'morocco': 'png',
-  'tokyo': 'png',
-  'new-zealand': 'png',
-  'iceland': 'png',
-  'urban-portraits': 'png'
+  'posters': 'png',
+  'products': 'png',
+  'logos': 'png',
+  'chronoslate': 'png',
+  'synthform': 'png'
 } as const
 
 // Collection folder name mapping (for case sensitivity)
 const collectionFolders: Record<string, string> = {
-  'bali': 'Bali',
-  'morocco': 'Morocco',
-  'tokyo': 'Tokyo',
-  'new-zealand': 'new_zealand',
-  'iceland': 'Iceland',
-  'urban-portraits': 'Urban_Portraits'
+  'posters': 'POSTERS',
+  'products': 'products',
+  'logos': 'logos',
+  'chronoslate': 'ChronoSlate',
+  'synthform': 'Synthform'
 } as const
 
 // Collection image counts and formats
 const collectionImages: Record<string, { count: number; formats: string[] }> = {
-  'bali': { 
-    count: 16,
-    formats: ['jpeg', 'jpg']
-  },
-  'morocco': { 
-    count: 21,
-    formats: ['webp']
-  },
-  'tokyo': { 
-    count: 20,
-    formats: ['jpg']
-  },
-  'new-zealand': { 
-    count: 18,
-    formats: ['jpg']
-  },
-  'iceland': { 
-    count: 14,
-    formats: ['jpg']
-  },
-  'urban-portraits': { 
-    count: 16,
-    formats: ['jpg']
-  }
+  'posters': { count: 0, formats: ['png'] },
+  'products': { count: 0, formats: ['png'] },
+  'logos': { count: 0, formats: ['png'] },
+  'chronoslate': { count: 0, formats: ['png'] },
+  'synthform': { count: 0, formats: ['png'] }
 } as const
 
 // Common metadata for photos
@@ -102,76 +81,37 @@ function getCoverImagePath(folderName: string): string {
 const collections: Collection[] = [
   {
     id: "1",
-    slug: "new-zealand",
-    title: "New Zealand Landscapes",
-    description: "Breathtaking landscapes from across New Zealand",
-    fullDescription:
-      "New Zealand offers some of the most diverse and dramatic landscapes in the world. From the snow-capped Southern Alps to the pristine beaches of the Coromandel Peninsula, this collection captures the raw beauty and majesty of Aotearoa.",
-    coverImage: getCoverImagePath("new_zealand"),
-    tags: ["Nature", "Landscape", "Mountains"],
+    slug: "posters",
+    title: "Posters",
+    description: "A collection of posters.",
+    fullDescription: "A curated selection of design posters.",
+    coverImage: getCoverImagePath("POSTERS"),
+    tags: ["Design", "Art"],
     featured: true,
-    photos: getCollectionImages("new-zealand"),
+    photos: getCollectionImages("posters"),
   },
   {
     id: "2",
-    slug: "tokyo",
-    title: "Japan: Urban & Traditional",
-    description: "The contrast between modern and traditional Japan",
-    fullDescription:
-      "Japan presents a fascinating juxtaposition of ultramodern urban environments and serene traditional settings. This collection explores the visual dialogue between Tokyo's neon-lit streets and the tranquil temples of Kyoto, capturing Japan's unique cultural identity.",
-    coverImage: getCoverImagePath("Tokyo"),
-    tags: ["Urban", "Culture", "Architecture"],
+    slug: "products",
+    title: "Products",
+    description: "A collection of products.",
+    fullDescription: "A curated selection of products.",
+    coverImage: getCoverImagePath("products"),
+    tags: ["Product", "Design"],
     featured: true,
-    photos: getCollectionImages("tokyo"),
+    photos: getCollectionImages("products"),
   },
   {
     id: "3",
-    slug: "bali",
-    title: "Bali: Island of the Gods",
-    description: "Tropical paradise and cultural heritage of Bali",
-    fullDescription:
-      "Known as the Island of the Gods, Bali captivates with its dramatic landscapes, vibrant cultural heritage, and spiritual atmosphere. This collection documents the island's terraced rice fields, ancient temples, pristine beaches, and the warmth of Balinese people.",
-    coverImage: getCoverImagePath("Bali"),
-    tags: ["Tropical", "Culture", "Nature"],
+    slug: "logos",
+    title: "Logos",
+    description: "A collection of logos.",
+    fullDescription: "A curated selection of logo designs.",
+    coverImage: getCoverImagePath("logos"),
+    tags: ["Logo", "Branding"],
     featured: true,
-    photos: getCollectionImages("bali"),
-  },
-  {
-    id: "4",
-    slug: "iceland",
-    title: "Iceland: Land of Fire and Ice",
-    description: "Dramatic landscapes of Iceland",
-    fullDescription:
-      "Iceland's otherworldly landscapes showcase nature's raw power and beauty. This collection captures the country's dramatic contrasts: steaming geothermal areas alongside massive glaciers, thundering waterfalls cutting through black lava fields, and the ethereal Northern Lights dancing above it all.",
-    coverImage: getCoverImagePath("Iceland"),
-    tags: ["Nature", "Landscape", "Winter"],
-    featured: false,
-    photos: getCollectionImages("iceland"),
-  },
-  {
-    id: "5",
-    slug: "morocco",
-    title: "Colors of Morocco",
-    description: "Vibrant markets, architecture, and desert landscapes",
-    fullDescription:
-      "Morocco is a feast for the senses, with its vibrant colors, intricate patterns, and diverse landscapes. This collection explores the bustling medinas, ancient kasbahs, vast Sahara dunes, and the rich cultural tapestry that makes Morocco so visually captivating.",
-    coverImage: getCoverImagePath("Morocco"),
-    tags: ["Culture", "Desert", "Architecture"],
-    featured: false,
-    photos: getCollectionImages("morocco"),
-  },
-  {
-    id: "6",
-    slug: "urban-portraits",
-    title: "Urban Portraits",
-    description: "Street photography and urban life around the world",
-    fullDescription:
-      "This collection focuses on the human element within urban environments. Through candid street photography and environmental portraits, it captures the diversity, energy, and stories of city dwellers across different cultures and metropolises around the world.",
-    coverImage: getCoverImagePath("Urban_Portraits"),
-    tags: ["Urban", "People", "Street"],
-    featured: false,
-    photos: getCollectionImages("urban-portraits"),
-  },
+    photos: getCollectionImages("logos"),
+  }
 ]
 
 // Export functions

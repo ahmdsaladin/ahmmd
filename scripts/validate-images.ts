@@ -3,50 +3,29 @@ const path = require('path');
 
 // Collection image counts and formats
 const collectionImages: Record<string, { count: number; formats: string[] }> = {
-  'bali': { 
-    count: 16,
-    formats: ['jpeg', 'jpg']  // Bali has images in both formats
-  },
-  'morocco': { 
-    count: 21,  // Updated count based on actual files
-    formats: ['webp']
-  },
-  'tokyo': { 
-    count: 20,  // Updated count based on actual files
-    formats: ['jpg']
-  },
-  'new-zealand': { 
-    count: 18,
-    formats: ['jpg']
-  },
-  'iceland': { 
-    count: 14,
-    formats: ['jpg']
-  },
-  'urban-portraits': { 
-    count: 16,
-    formats: ['jpg']
-  }
+  'posters': { count: 0, formats: ['png'] },
+  'products': { count: 0, formats: ['png'] },
+  'logos': { count: 0, formats: ['png'] },
+  'chronoslate': { count: 0, formats: ['png'] },
+  'synthform': { count: 0, formats: ['png'] }
 }
 
 // Collection format mapping for cover images
 const collectionFormats: Record<string, string> = {
-  'bali': 'png',
-  'morocco': 'png',
-  'tokyo': 'png',
-  'new-zealand': 'png',
-  'iceland': 'png',
-  'urban-portraits': 'png'
+  'posters': 'png',
+  'products': 'png',
+  'logos': 'png',
+  'chronoslate': 'png',
+  'synthform': 'png'
 }
 
 // Collection folder name mapping (for case sensitivity)
 const collectionFolders: Record<string, string> = {
-  'bali': 'Bali',
-  'morocco': 'Morocco',
-  'tokyo': 'Tokyo',
-  'new-zealand': 'new zealand',
-  'iceland': 'Iceland',
-  'urban-portraits': 'Urban Portraits'
+  'posters': 'POSTERS',
+  'products': 'products',
+  'logos': 'logos',
+  'chronoslate': 'ChronoSlate',
+  'synthform': 'Synthform'
 }
 
 interface ValidationResult {

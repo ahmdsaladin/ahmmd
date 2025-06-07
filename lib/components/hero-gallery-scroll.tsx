@@ -8,12 +8,11 @@ import { motion } from "framer-motion"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const IMAGES = [
-  "/Morocco/cover.png",
-  "/new_zealand/cover.png",
-  "/Tokyo/cover.png",
-  "/Bali/cover.png",
-  "/Iceland/cover.png",
-  "/Urban_Portraits/cover.png"
+  "/POSTERS/cover.png",
+  "/products/cover.png",
+  "/logos/cover.png",
+  "/ChronoSlate/cover.png",
+  "/Synthform/cover.png"
 ]
 
 export function HeroGalleryScroll() {
