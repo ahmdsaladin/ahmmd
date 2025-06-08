@@ -11,11 +11,12 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src="/Iceland/iceland-7.jpg?height=800&width=1920"
-          alt="About X100"
-          fill
+          src="/about.jpg"
+          alt="About Ahmd Saladin"
+          width={1920}
+          height={1080}
+          className="object-cover w-full h-full"
           priority
-          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
         <motion.div
@@ -70,7 +71,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2">
                 <Camera size={20} className="text-primary" />
-                <span className="text-primary">Fujifilm x100vi & Leica M10</span>
+                <span className="text-primary">Sony Alpha A7 IV & Leica M10</span>
               </div>
               <div className="flex items-center gap-2">
                 <Globe size={20} className="text-primary" />

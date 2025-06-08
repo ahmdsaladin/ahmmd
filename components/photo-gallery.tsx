@@ -405,19 +405,9 @@ export function PhotoGallery({ photos, className }: PhotoGalleryProps) {
                     {currentPhotoIndex + 1} of {validPhotos.length}
                   </p>
                   {currentPhoto.metadata && (
-                    <div className="flex items-center gap-2 text-sm text-white/70">
-                      <Camera size={14} />
-                      {/* <span>{currentPhoto.metadata.camera}</span> */}
-                      <span>X100VI</span>
-                      {currentPhoto.metadata.focalLength && <span>| {currentPhoto.metadata.focalLength}</span>}
-                      <span>|</span>
-                      {currentPhoto.metadata.aperture && <span>| {currentPhoto.metadata.aperture}</span>}
-                      <span>|</span>
-                      {currentPhoto.metadata.shutterSpeed && <span>| {currentPhoto.metadata.shutterSpeed}</span>}
-                      {currentPhoto.metadata.iso && <span>| ISO {currentPhoto.metadata.iso}</span>}
-                      {(!currentPhoto.metadata.camera && !currentPhoto.metadata.focalLength && !currentPhoto.metadata.aperture && !currentPhoto.metadata.shutterSpeed && !currentPhoto.metadata.iso) && (
-                        <span>No capture data recorded</span>
-                      )}
+                    <div className="flex items-center gap-2">
+                      <Camera size={20} className="text-primary" />
+                      <span>Sony Alpha A7 IV</span>
                     </div>
                   )}
                 </div>

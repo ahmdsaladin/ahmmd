@@ -37,7 +37,7 @@ function getOrCreateAudioElement(): HTMLAudioElement | null {
     }
 
     globalAudioElement = document.createElement('audio')
-    globalAudioElement.src = "/Fuji Camera Shutter Sound.mp3"
+    globalAudioElement.src = "/click-tone.wav"
     globalAudioElement.preload = "auto"
     globalAudioElement.style.display = "none"
     globalAudioElement.setAttribute('playsinline', 'true')

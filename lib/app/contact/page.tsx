@@ -18,11 +18,12 @@ export default function ContactPage() {
        {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src="/new zealand/new-zealand-17.jpg?height=800&width=1920"
-          alt="Contact X100"
-          fill
+          src="/contact.jpg"
+          alt="Contact Ahmd Saladin"
+          width={1920}
+          height={1080}
+          className="object-cover w-full h-full"
           priority
-          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
         <motion.div
@@ -68,7 +69,7 @@ export default function ContactPage() {
                 {
                   icon: <Mail className="text-primary mt-1" size={20} />,
                   title: "Email",
-                  content: "contact@x100.com",
+                  content: "contact@ahmdsaladin.com",
                 },
                 {
                   icon: <MapPin className="text-primary mt-1" size={20} />,

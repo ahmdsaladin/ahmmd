@@ -156,43 +156,43 @@ export default function ContactPage() {
               answer:
                 "Yes — I work with individuals, studios, and brands on a wide range of visual projects, from posters and brand identity to UI and product design. Share your idea, and let's see if it resonates.",
             },
-            {
+              {
               question: "Can I commission you for a film or music poster?",
               answer:
                 "Absolutely. Crafting emotionally and visually resonant posters is one of my core offerings. Whether it's a short film, feature, or album release, I tailor the design to the soul of the work.",
             },
             {
               question: "Do you offer branding or logo design services?",
-              answer:
+                answer:
                 "Yes — I provide end-to-end branding services, including logo design, color systems, product aesthetics, and packaging. I especially enjoy working with brands that carry a strong narrative or cultural essence.",
-            },
-            {
+              },
+              {
               question: "Are your designs available as prints or collectibles?",
-              answer:
+                answer:
                 "Select poster artworks are available as high-quality prints upon request. I occasionally release limited edition pieces — join my newsletter or reach out directly to inquire.",
-            },
-            {
+              },
+              {
               question: "What's your typical process when working with clients?",
-              answer:
+                answer:
                 "My process is adaptive — grounded in deep listening, visual storytelling, and clarity of intent. Whether it's a logo, a film poster, or an interface, I work closely with clients to translate abstract visions into meaningful visual realities.",
-            },
-            {
+              },
+              {
               question: "Do you collaborate with international clients?",
-              answer:
+                answer:
                 "Yes, most of my work is global. I've collaborated with filmmakers, musicians, and entrepreneurs across continents — from Egypt to Europe to East Asia. Remote work is seamless, and I'm always open to new creative dialogues.",
-            },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="font-medium text-xl mb-2">{item.question}</h3>
-              <p className="text-primary/60">{item.answer}</p>
-            </motion.div>
-          ))}
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="font-medium text-xl mb-2">{item.question}</h3>
+                <p className="text-primary/60">{item.answer}</p>
+              </motion.div>
+            ))}
         </div>
       </section>
 

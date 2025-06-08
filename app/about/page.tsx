@@ -109,26 +109,26 @@ export default function AboutPage() {
               Design is not what I do. It's how I see. I am Ahmed, also known as Ahmd—a Design Architect devoted to the art of shaping visual narratives into intentional, immersive experiences. I believe design is where soul meets system: a space where aesthetics are not decoration, but revelation. Whether it's a poster that breathes story, a logo that carries a brand's soul, or an interface that feels like second nature—I design to bridge the abstract and the intimate, the visionary and the functional. Every project is a dialogue between clarity and emotion, structure and spirit.
             </p>
             <p className="text-primary mb-4">
-              This approach allows me to move fluidly across disciplines, adapting my tools to the challenge—always in pursuit of meaningful impact.
+            This approach allows me to move fluidly across disciplines, adapting my tools to the challenge—always in pursuit of meaningful impact.
             </p>
-            <div className="flex items-center gap-2">
-              <Globe size={20} className="text-primary" />
-              <span className="text-primary">30+ Countries</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Award size={20} className="text-primary" />
-              <span className="text-primary">Award-winning</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Users size={20} className="text-primary" />
-              <span className="text-primary">Workshops & Mentoring</span>
-            </div>
+              <div className="flex items-center gap-2">
+                <Globe size={20} className="text-primary" />
+                <span className="text-primary">30+ Countries</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award size={20} className="text-primary" />
+                <span className="text-primary">Award-winning</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users size={20} className="text-primary" />
+                <span className="text-primary">Workshops & Mentoring</span>
+              </div>
             <h2 className="text-3xl md:text-4xl mb-6 mt-8">My Approach</h2>
             <p className="text-primary mb-4">
               My design process is rooted in empathy, elevated by precision. I begin by listening—not just to clients, but to context, culture, and constraint. I believe that beauty without clarity is noise, and function without soul is forgettable. My goal is to find the form that feels inevitable, the layout that speaks, the interaction that flows like thought.
             </p>
             <p className="text-primary mb-4">
-              This approach allows me to move fluidly across disciplines, adapting my tools to the challenge—always in pursuit of meaningful impact.
+            This approach allows me to move fluidly across disciplines, adapting my tools to the challenge—always in pursuit of meaningful impact.
             </p>
           </motion.div>
         </div>
@@ -236,7 +236,7 @@ export default function AboutPage() {
           <h2 className="text-primary text-3xl md:text-4xl mb-6">Let's Begin?</h2>
           <p className="text-primary max-w-2xl mx-auto mb-8">
             If you're building something that matters—something that wants to connect, endure, evolve—I'd love to help shape its voice and form.
-            Explore the portfolio. Feel the story in every frame.
+          Explore the portfolio. Feel the story in every frame.
             Then reach out—and let's design something unforgettable.
           </p>
           <AnimatedButton href="/contact" variant="primary" icon={<ArrowRight size={18} />}>Get in Touch</AnimatedButton>

@@ -76,7 +76,7 @@ export default function Header() {
                 isScrolled || pathname !== "/" ? "text-primary" : "text-primary"
               }`}
             >
-              X100
+              Ahmd Saladin
             </Link>
           </div>
         

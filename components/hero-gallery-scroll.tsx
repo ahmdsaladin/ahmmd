@@ -36,20 +36,21 @@ export function HeroGalleryScroll() {
 
       <ContainerScale className="relative z-10 text-center">
         <motion.h1
-          className="max-w-xl text-5xl tracking-tighter text-primary text-backdrop-invert"
+          className="text-4xl md:text-6xl font-bold text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.5 }}
         >
-          X100
+          Ahmd Saladin
         </motion.h1>
         <motion.p
-          className="my-6 max-w-xl text-primary "
+          className="text-lg text-muted-foreground max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-           A Next.js portfolio for professional photographers, designed to flawlessly showcase powerful visual stories.        </motion.p>
+          I craft meaningful design experiences across posters, products, and digital interfaces — where every visual is a world, every detail a decision, and every project a story worth telling.
+        </motion.p>
         <div className="flex items-center flex-col md:flex-row justify-center gap-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
