@@ -8,12 +8,11 @@ import { motion } from "framer-motion"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const IMAGES = [
-  "/Covers/hyh.png",
-  "/Covers/cover.png",
   "/Covers/coverc.png",
   "/Covers/cove2r.png",
-  "/Covers/logos.png",
+  "/Covers/cover.png",
   "/Covers/img1.jpg"
+  "/Covers/logos.png",
 ]
 
 export function HeroGalleryScroll() {
@@ -49,7 +48,7 @@ export function HeroGalleryScroll() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          I craft meaningful design experiences across posters, products, and digital interfaces — where every visual is a world, every detail a decision, and every project a story worth telling.
+          I craft meaningful design experiences across posters, products, and digital interfaces.
         </motion.p>
         <div className="flex items-center flex-col md:flex-row justify-center gap-4">
           <motion.div

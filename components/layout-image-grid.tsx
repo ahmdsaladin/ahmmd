@@ -15,11 +15,11 @@ const SkeletonOne = () => {
   return (
     <div>
       <p className="font-oldLondon font-bold md:text-4xl text-xl text-white">
-        Tokyo Nights
+      Nebula Brand Identity
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Exploring the vibrant nightlife and neon-lit streets of Tokyo's urban landscape.
-      </p>
+      A cosmic-inspired identity system blending clarity, mystery, and digital elegance for a visionary design studio.
+</p>
     </div>
   );
 };
@@ -28,11 +28,11 @@ const SkeletonTwo = () => {
   return (
     <div>
       <p className="font-oldLondon font-bold md:text-4xl text-xl text-white">
-        Urban Portraits
+      ChronoSlate OS
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Capturing the essence of city life through intimate street photography and urban portraiture.
-      </p>
+      A temporal interface concept that reframes digital time as a tactile, spatial experience across screens.
+</p>
     </div>
   );
 };
@@ -41,10 +41,10 @@ const SkeletonThree = () => {
   return (
     <div>
       <p className="font-oldLondon font-bold md:text-4xl text-xl text-white">
-        New Zealand
+      STRATUM Data Visualization (upcoming)
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Documenting the raw beauty and untamed wilderness of New Zealand's landscapes.
+      A layered visual language that turns abstract datasets into poetic, glass-like topographies of meaning.
       </p>
     </div>
   );
@@ -54,10 +54,10 @@ const SkeletonFour = () => {
   return (
     <div>
       <p className="font-oldLondon font-bold md:text-4xl text-xl text-white">
-        Iceland
+      VIREO (upcoming)
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Capturing the ethereal beauty of Iceland's dramatic landscapes and natural wonders.
+      A serene biotechnological aesthetic where organic forms meet minimal tech — branding nature’s next interface.
       </p>
     </div>
   );
@@ -68,25 +68,25 @@ const cards = [
     id: 1,
     content: <SkeletonOne />,
     className: "md:col-span-2",
-    thumbnail: "/products/tokyo-22.webp",
+    thumbnail: "/4grid/Nebula Brand Identity.png",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
     className: "col-span-1",
-    thumbnail: "/logos/urban-portraits-1.jpg",
+    thumbnail: "/4grid/ChronoSlate OS_ Temporal UI for Creative Minds.png",
   },
   {
     id: 3,
     content: <SkeletonThree />,
     className: "col-span-1",
-    thumbnail: "/logos/new-zealand-18.jpg",
+    thumbnail: "/4grid/STRATUM Data Visualization.png",
   },
   {
     id: 4,
     content: <SkeletonFour />,
     className: "md:col-span-2",
-    thumbnail: "/Synthform/iceland-1.jpg",
+    thumbnail: "/4grid/VIREO Business Card.png",
   },
 ];
 

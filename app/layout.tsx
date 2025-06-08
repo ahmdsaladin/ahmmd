@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     template: '%s | Ahmd Saladin'
   },
   description: 'Portfolio for Ahmd Saladin, Design Manager / Architect.',
-  keywords: ['photography', 'travel photography', 'landscape photography', 'urban photography', 'Egypt photographer', 'visual storytelling'],
-  authors: [{ name: 'Ahmd Saladin', url: 'https://ahmdsaladin.com' }],
+  keywords: ['visual designer, design architect, poster designer, cinematic posters, UI/UX designer, branding expert, brand identity, product design, art direction, editorial layout, logo design, creative consultant, modern Egyptian designer, Alexandria artist, digital storytelling, minimal design, glassmorphic design, high-end visuals, experimental design, cultural design, interface aesthetics, strategic design systems, film poster design, music poster artist, award-winning designer'],
+  authors: [{ name: 'Ahmd Saladin', url: 'https://ahmdsaladin.vercesl.app' }],
   creator: 'Ahmd Saladin',
   publisher: 'Ahmd Saladin',
   formatDetection: {
@@ -40,32 +40,32 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://ahmdsaladin.com'),
+  metadataBase: new URL('https://ahmdsaladin.vercesl.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://ahmdsaladin.com',
-    siteName: 'Ahmd Saladin Photography',
-    title: 'Ahmd Saladin | Photographer & Visual Storyteller',
-    description: 'Explore the world through my lens. Professional photographer specializing in travel, landscape, and urban photography. Based in Egypt, capturing moments worldwide.',
+    url: 'https://ahmdsaladin.vercesl.app',
+    siteName: 'Ahmd Saladin Designs',
+    title: 'Ahmd Saladin | Design Manager',
+    description: 'Explore a selection of my most resonant design works — from cinematic posters to immersive interfaces and brand systems.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/avatar.png',
         width: 1200,
         height: 630,
-        alt: 'Ahmd Saladin Photography'
+        alt: 'Ahmd Saladin'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ahmd Saladin | Photographer & Visual Storyteller',
-    description: 'Explore the world through my lens. Professional photographer specializing in travel, landscape, and urban photography. Based in Egypt, capturing moments worldwide.',
+    title: 'Ahmd Saladin | Design Manager / Architect',
+    description: 'Explore a selection of my most resonant design works — from cinematic posters to immersive interfaces and brand systems.',
     creator: '@ahmdsaladin',
-    images: ['/og-image.jpg'],
+    images: ['/avatar.png'],
   },
   robots: {
     index: true,
@@ -79,13 +79,13 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-site-verification',
-    yandex: 'your-yandex-verification',
-    yahoo: 'your-yahoo-verification',
+    google: '187045917450-o5v80hdsmj93tdcp52j30b7krrv4a2ko.apps.googleusercontent.com',
+    yandex: 'aeaa4e409e43dbff',
+    yahoo: '528AA44CDE26AF222116FDB10F516187 ',
   },
-  category: 'photography',
+  category: 'Design',
 }
-
+<meta name="msvalidate.01" content="528AA44CDE26AF222116FDB10F516187" />
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>

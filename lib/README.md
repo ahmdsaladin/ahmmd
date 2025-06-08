@@ -60,7 +60,11 @@ The portfolio is organized into collections:
 - Bali
 - Morocco
 
-Each collection should be placed in its corresponding folder in the `public` directory. Update image Validation /scripts/validate-images.ts
+Each collection should be placed in its corresponding folder in the `public` directory with the following structure:
+- `cover.png` - The cover image for the collection (must be PNG format)
+- `[collection-name]-[number].jpg` - The individual photos in the collection
+
+Update image validation in `/scripts/validate-images.ts` if you need to modify the collection structure.
 
 ## 🎨 Theme Customization
 

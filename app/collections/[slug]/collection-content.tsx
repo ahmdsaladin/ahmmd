@@ -24,7 +24,7 @@ export function CollectionContent({ collection }: Props) {
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src={collection.coverImage || "/Morocco/morocco-8.webp?height=800&width=1920"}
+          src={collection.coverImage || "/WORK2.png?height=800&width=1920"}
           alt={collection.title}
           fill
           priority
@@ -74,7 +74,7 @@ export function CollectionContent({ collection }: Props) {
           >
             <h2 className="text-3xl md:text-4xl mb-4">Featured Collections</h2>
             <p className="text-primary max-w-2xl mx-auto">
-              Explore some of my most popular photography collections from around the world
+            Explore a selection of my most resonant design works — from cinematic posters to immersive interfaces and brand systems.
             </p>
           </motion.div>
           <FeaturedCollections />

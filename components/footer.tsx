@@ -33,12 +33,11 @@ export default function Footer() {
             </Link>
           </div>
           <p className="text-muted-foreground max-w-md mb-6 max-w-xs">
-            Capturing moments and telling stories through the lens. Professional photography services for all your
-            needs.
+          I transform ideas into living experiences.
           </p>
           <div className="flex space-x-4 items-center">
             <motion.a
-              href="https://github.com/lilxyzz"
+              href="https://www.instagram.com/ahmdsaladin/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -49,7 +48,7 @@ export default function Footer() {
               <span className="sr-only">Instagram</span>
             </motion.a>
             <motion.a
-              href="https://github.com/lilxyzz"
+              href="https://x.com/ahmdsaladin"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -60,7 +59,7 @@ export default function Footer() {
               <span className="sr-only">Twitter</span>
             </motion.a>
             <motion.a
-              href="https://github.com/lilxyzz"
+              href="https://www.facebook.com/AhmdSaladinDesigns"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -71,7 +70,7 @@ export default function Footer() {
               <span className="sr-only">Facebook</span>
             </motion.a>
               <motion.a
-                href="https://github.com/lilxyzz"
+                href="https://www.youtube.com/?app=desktop"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
@@ -81,8 +80,8 @@ export default function Footer() {
                 <Youtube size={20} />
                 <span className="sr-only">Youtube</span>
             </motion.a>
-             {/* <motion.a
-                href="https://linkedin.com"
+             <motion.a
+                href="https://linkedin.com/in/ahmdsaladin"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
@@ -91,9 +90,9 @@ export default function Footer() {
               >
                 <Linkedin size={20} />
                 <span className="sr-only">Linkedin</span>
-            </motion.a> */}
+            </motion.a>
              <motion.a
-                href="https://github.com/lilxyzz"
+                href="https://github.com/ahmdsaladin"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
@@ -142,7 +141,7 @@ export default function Footer() {
           <h3 className="section-title text-2xl mb-4">Contact</h3>
           <ul className="space-y-2 text-muted-foreground">
             <h4 className="text-primary">Email</h4>
-            <a href="mailto:contact@ahmdsaladin.com"><li>contact@ahmdsaladin.com</li></a> 
+            <a href="mailto:contact@ahmdsaladin.com"><li>sotahmed100@gmail.com</li></a> 
             {/* <li>Phone: +1 (555) 123-4567</li> */}
             <h4 className="text-primary">Location</h4>
             <li>39.1569° S, 175.6321° E</li>
@@ -158,8 +157,8 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          © {new Date().getFullYear()} <Link href="https://travislord.xyz" target="_blank"
-                rel="noopener noreferrer" className="hover:text-primary transition-colors">TL</Link>. All rights reserved. 🕸️
+          © {new Date().getFullYear()} <Link href="https://ahmdsaladin.vercel.app/" target="_blank"
+                rel="noopener noreferrer" className="hover:text-primary transition-colors">AHMD</Link>. All rights reserved. 🕸️
         </motion.p>
       </div>
     </motion.footer>

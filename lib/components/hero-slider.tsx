@@ -94,11 +94,11 @@ export default function HeroSlider() {
       {/* Static text content that doesn't change with slides */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4 z-10">
         <h1 className="text-4xl md:text-6xl lg:text-7xl text-white mb-6">
-          Capturing Moments Around the World
+        Transforming ideas into living experiences.
         </h1>
         <p className="text-white/90 text-lg md:text-xl max-w-2xl mb-8">
-          Professional photography showcasing the beauty of nature, urban landscapes, and cultural moments from across
-          the globe.
+        Visual design rooted in narrative, symbolism, and precision
+        crafting cinematic posters, refined interfaces, and immersive identities that echo across culture, space, and memory.
         </p>
       </div>
 

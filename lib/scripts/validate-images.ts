@@ -70,7 +70,7 @@ function validateImages(dryRun: boolean = false): ValidationResult {
     }
 
     // Check cover image
-    const coverFormat = collectionFormats[slug]
+    const coverFormat = 'png'
     const coverPath = path.join(collectionDir, `cover.${coverFormat}`)
     if (!fs.existsSync(coverPath)) {
       const error = `Cover image missing: ${folderName}/cover.${coverFormat}`
@@ -159,4 +159,4 @@ const args = process.argv.slice(2)
 const dryRun = args.includes('--dry-run')
 
 // Run the validation
-validateImages(dryRun) 
+validateImages(dryRun)

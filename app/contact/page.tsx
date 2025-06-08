@@ -208,7 +208,7 @@ export default function ContactPage() {
           >
             <h2 className="text-3xl md:text-4xl mb-4">Featured Collections</h2>
             <p className="text-primary max-w-2xl mx-auto">
-              Explore some of my most popular photography collections from around the world
+              Explore some of my most popular Designs collections from around the world
             </p>
           </motion.div>
           <FeaturedCollections />

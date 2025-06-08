@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Instagram, Twitter, Facebook, Youtube, Linkedin, Github } from "lucide-react"
+import { Instagram, Twitter, Facebook, Youtube, Linkedin, Github, Mail, Whatsapp } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 import { motion } from "framer-motion"
 import Logo from "./logo"
@@ -33,7 +33,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className="text-muted-foreground max-w-md mb-6 max-w-xs">
-          Designing interfaces that connect deeply with users' needs and intentions.
+          I transform ideas into living experiences.
           </p>
           <div className="flex space-x-4 items-center">
             <motion.a
@@ -59,7 +59,7 @@ export default function Footer() {
               <span className="sr-only">Twitter</span>
             </motion.a>
             <motion.a
-              href="https://www.facebook.com/AhmdSaladindesigns"
+              href="https://www.facebook.com/AhmdSaladinDesigns"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -70,7 +70,7 @@ export default function Footer() {
               <span className="sr-only">Facebook</span>
             </motion.a>
               <motion.a
-                href="https://www.youtube.com/ahmdsaladin"
+                href="https://www.youtube.com/?app=desktop"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
@@ -129,11 +129,6 @@ export default function Footer() {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">
-                Blog
-              </Link>
-            </li>
           </ul>
         </motion.div>
 
@@ -146,10 +141,10 @@ export default function Footer() {
           <h3 className="section-title text-2xl mb-4">Contact</h3>
           <ul className="space-y-2 text-muted-foreground">
             <h4 className="text-primary">Email</h4>
-            <a href="mailto:sotahmed100@gmail.com"><li>sotahmed100@gmail.com</li></a> 
+            <a href="mailto:contact@ahmdsaladin.com"><li>sotahmed100@gmail.com</li></a> 
             {/* <li>Phone: +1 (555) 123-4567</li> */}
             <h4 className="text-primary">Location</h4>
-            <li>Alexandria - Egypt</li>
+            <li>39.1569° S, 175.6321° E</li>
           </ul>
         </motion.div>
       </div>
@@ -163,7 +158,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           © {new Date().getFullYear()} <Link href="https://ahmdsaladin.vercel.app/" target="_blank"
-                rel="noopener noreferrer" className="hover:text-primary transition-colors">Ahmd Saladin</Link>. All rights reserved. 🕸️
+                rel="noopener noreferrer" className="hover:text-primary transition-colors">AHMD</Link>. All rights reserved. 🕸️
         </motion.p>
       </div>
     </motion.footer>
