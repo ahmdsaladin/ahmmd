@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Mail, MapPin, Phone, Instagram, Twitter, Facebook, Youtube, Linkedin, Github } from "lucide-react"
+import { Mail, MapPin, Instagram, Twitter, Facebook, Youtube, Linkedin, Github, MessageCircle } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import { motion } from "framer-motion"
 import FeaturedCollections from "@/components/featured-collections"
@@ -18,8 +18,8 @@ export default function ContactPage() {
        {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src="/new zealand/new-zealand-17.jpg?height=800&width=1920"
-          alt="Contact X100"
+          src="/WORK2.png"
+          alt="Contact Ahmd"
           fill
           priority
           className="object-cover"
@@ -68,12 +68,12 @@ export default function ContactPage() {
                 {
                   icon: <Mail className="text-primary mt-1" size={20} />,
                   title: "Email",
-                  content: "contact@x100.com",
+                  content: "sotahmed100@gmail.com",
                 },
                 {
                   icon: <MapPin className="text-primary mt-1" size={20} />,
                   title: "Location",
-                  content: "31.9514° S, 115.8617° E",
+                  content: "Alexandria - Egypt",
                 },
               ].map((item) => (
                 <motion.div
@@ -101,12 +101,13 @@ export default function ContactPage() {
               <h3 className="text-xl mb-4">Keep Up To Date</h3>
               <div className="flex flex-wrap gap-1">
                 {[
-                  { icon: <Instagram size={26} />, label: "Instagram", href: "https://github.com/lilxyzz" },
-                  { icon: <Twitter size={26} />, label: "Twitter", href: "https://github.com/lilxyzz" },
-                  { icon: <Facebook size={26} />, label: "Facebook", href: "https://github.com/lilxyzz" },
-                  { icon: <Youtube size={26} />, label: "Youtube", href: "https://github.com/lilxyzz" },
-                  // { icon: <Linkedin size={20} />, label: "Linkedin", href: "https://linkedin.com" },
-                  { icon: <Github size={26} />, label: "Github", href: "https://github.com/lilxyzz" },
+                  { icon: <Instagram size={26} />, label: "Instagram", href: "https://www.instagram.com/ahmdsaladin/" },
+                  { icon: <Twitter size={26} />, label: "Twitter", href: "https://x.com/ahmdsaladin" },
+                  { icon: <Facebook size={26} />, label: "Facebook", href: "https://www.facebook.com/AhmdSaladindesigns" },
+                  { icon: <Youtube size={26} />, label: "Youtube", href: "https://www.youtube.com/ahmdsaladin" },
+                  { icon: <Linkedin size={20} />, label: "Linkedin", href: "https://linkedin.com/in/ahmdsaladin" },
+                  { icon: <Github size={26} />, label: "Github", href: "https://github.com/ahmdsaladin" },
+                  { icon: <MessageCircle size={26} />, label: "WhatsApp", href: "https://wa.me/01069761060" },
                 ].map((item) => (
                   <motion.a
                     key={item.label}
@@ -149,42 +150,49 @@ export default function ContactPage() {
           >
             Frequently Asked Questions
           </motion.h2>
-
-          <div className="space-y-8">
-            {[
-              {
-                question: "Do you offer prints of your photographs?",
-                answer:
-                  "Yes, most of my photographs are available as fine art prints. You can inquire about specific images through the contact form.",
-              },
-              {
-                question: "Are you available for commercial photography?",
-                answer:
-                  "Absolutely. I work with brands and publications on commercial projects. Please reach out with details about your project for a custom quote.",
-              },
-              {
-                question: "Do you offer photography workshops?",
-                answer:
-                  "Yes, I regularly host workshops both in-person and online. Join my newsletter to be notified when new workshop dates are announced.",
-              },
-              {
-                question: "Can I license your photos for my website/publication?",
-                answer:
-                  "Yes, licensing options are available for both digital and print use. Please contact me with details about your intended use for licensing information.",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="font-medium text-xl mb-2">{item.question}</h3>
-                <p className="text-primary/60">{item.answer}</p>
-              </motion.div>
-            ))}
-          </div>
+          {[
+            {
+              question: "Do you take on freelance or commission-based work?",
+              answer:
+                "Yes — I work with individuals, studios, and brands on a wide range of visual projects, from posters and brand identity to UI and product design. Share your idea, and let's see if it resonates.",
+            },
+            {
+              question: "Can I commission you for a film or music poster?",
+              answer:
+                "Absolutely. Crafting emotionally and visually resonant posters is one of my core offerings. Whether it's a short film, feature, or album release, I tailor the design to the soul of the work.",
+            },
+            {
+              question: "Do you offer branding or logo design services?",
+              answer:
+                "Yes — I provide end-to-end branding services, including logo design, color systems, product aesthetics, and packaging. I especially enjoy working with brands that carry a strong narrative or cultural essence.",
+            },
+            {
+              question: "Are your designs available as prints or collectibles?",
+              answer:
+                "Select poster artworks are available as high-quality prints upon request. I occasionally release limited edition pieces — join my newsletter or reach out directly to inquire.",
+            },
+            {
+              question: "What's your typical process when working with clients?",
+              answer:
+                "My process is adaptive — grounded in deep listening, visual storytelling, and clarity of intent. Whether it's a logo, a film poster, or an interface, I work closely with clients to translate abstract visions into meaningful visual realities.",
+            },
+            {
+              question: "Do you collaborate with international clients?",
+              answer:
+                "Yes, most of my work is global. I've collaborated with filmmakers, musicians, and entrepreneurs across continents — from Egypt to Europe to East Asia. Remote work is seamless, and I'm always open to new creative dialogues.",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="font-medium text-xl mb-2">{item.question}</h3>
+              <p className="text-primary/60">{item.answer}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
