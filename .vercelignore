@@ -1,0 +1,15 @@
+lib/
+lib/public/
+.git/
+.next/
+node_modules/
+public/POSTERS/
+public/products/
+public/logos/
+public/ChronoSlate/
+public/4grid/
+public/Covers/
+public/Synthform/
+public/avatar.png
+public/Logo.png
+public/WORK2.png 
