@@ -10,10 +10,10 @@ import { ThemeToggle } from "@/components/theme-toggle"
 const IMAGES = [
   "/Covers/coverc.png",
   "/Covers/cove2r.png",
-  "/Covers/cover.png",
+  "/Covers/logos.png",
   "/Covers/img1.jpg",
-  "/Covers/logos.png"
-];
+  "/Covers/cover.png",
+]
 
 export function HeroGalleryScroll() {
   return (
