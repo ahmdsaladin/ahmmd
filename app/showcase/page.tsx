@@ -16,8 +16,8 @@ export default function ShowcasePage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src="/Morocco/morocco-11.webp?height=800&width=1920"
-          alt="Photography collections showcase"
+          src="/public/WORK2.png?height=800&width=1920"
+          alt="Designs collections showcase"
           fill
           priority
           className="object-cover"
@@ -29,9 +29,9 @@ export default function ShowcasePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl text-white mb-4">Photography Collections</h1>
+          <h1 className="text-4xl md:text-5xl text-white mb-4">Designs Collections</h1>
           <p className="text-white/90 text-lg max-w-2xl">
-            Explore my diverse portfolio of photography from around the world
+            Explore my diverse portfolio of Designs from around the world
           </p>
         </motion.div>
       </section>
