@@ -54,7 +54,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <Image
-              src="/WORK2.png?height=1000&width=800"
+              src="/WORK2.png"
               alt="Photographer at work"
               fill
               className="object-cover"

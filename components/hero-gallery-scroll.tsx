@@ -6,29 +6,49 @@ import AnimatedButton from "@/components/animated-button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { ThemeToggle } from "@/components/theme-toggle"
+import Image from "next/image"
 
 const IMAGES = [
-  "/Covers/coverc.png",
-  "/Covers/cove2r.png",
-  "/Covers/logos.png",
-  "/Covers/img1.jpg",
-  "/Covers/cover.png",
+  {
+    src: "/Covers/coverc.png",
+    alt: "Products Collection Cover"
+  },
+  {
+    src: "/Covers/cove2r.png",
+    alt: "Posters Collection Cover"
+  },
+  {
+    src: "/Covers/logos.png",
+    alt: "Logos Collection Cover"
+  },
+  {
+    src: "/Covers/img1.jpg",
+    alt: "Featured Work"
+  },
+  {
+    src: "/Covers/cover.png",
+    alt: "Main Cover"
+  }
 ]
 
 export function HeroGalleryScroll() {
   return (
     <ContainerScroll className="h-[350vh]">
       <BentoGrid className="sticky left-0 top-0 z-0 h-screen w-full p-4">
-        {IMAGES.map((imageUrl, index) => (
+        {IMAGES.map((image, index) => (
           <BentoCell
             key={index}
             className="overflow-hidden rounded-3xl shadow-xl"
           >
-            <img
-              className="size-full object-cover object-center"
-              src={imageUrl}
-              alt=""
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover object-center"
+                priority={index < 2}
+              />
+            </div>
           </BentoCell>
         ))}
       </BentoGrid>

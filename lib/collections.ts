@@ -72,7 +72,12 @@ function getCollectionImages(collectionSlug: string): Photo[] {
 
 // Function to get cover image path
 function getCoverImagePath(folderName: string): string {
-  return `/${folderName}/cover.png`
+  const coverMap: { [key: string]: string } = {
+    'POSTERS': '/Covers/cover.png',
+    'products': '/Covers/coverc.png',
+    'logos': '/Covers/logos.png'
+  };
+  return coverMap[folderName] || '/Covers/cover.png';
 }
 
 // Collections data

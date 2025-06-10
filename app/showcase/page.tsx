@@ -16,8 +16,8 @@ export default function ShowcasePage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src="/public/WORK2.png?height=800&width=1920"
-          alt="Designs collections showcase"
+          src="/WORK2.png?height=800&width=1920"
+          alt="Design collections showcase"
           fill
           priority
           className="object-cover"
