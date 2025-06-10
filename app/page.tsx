@@ -9,6 +9,7 @@ import Image from "next/image"
 import { HeroGalleryScroll } from "@/components/hero-gallery-scroll"
 import { DynamicFrame } from "@/components/dynamic-frame"
 import { LayoutGridDemo } from "@/components/layout-image-grid"
+import RecentBlogPosts from "@/components/RecentBlogPosts"
 
 export default function Home() {
   return (
@@ -53,7 +54,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <Image
-              src="/Morocco/morocco-9.webp?height=1000&width=800"
+              src="/WORK2.png?height=1000&width=800"
               alt="Photographer at work"
               fill
               className="object-cover"
@@ -120,25 +121,7 @@ export default function Home() {
       {/* Blog Section */}
       <section className="mb-32 px-4 md:px-8 z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:space-x-16">
-            <div className="md:w-1/3 mb-8 md:mb-0 text-center md:text-left">
-              <h2 className="text-4xl font-bold leading-tight">Latest from<br />the blog</h2>
-            </div>
-            <div className="md:w-2/3 flex flex-col md:flex-row gap-8 justify-center">
-              {/* Blog Post Card 1 */}
-              <div className="bg-transparent rounded-lg flex-1">
-                <h3 className="text-xl font-bold mb-2">Ethical Design: Prioritizing User Privacy in UI/UX Projects</h3>
-                <p className="text-sm text-gray-400 mb-2">June 1, 2025</p>
-                <span className="inline-block px-3 py-1 rounded-full text-xs border border-gray-600 text-white">ethical UI/UX design</span>
-              </div>
-              {/* Blog Post Card 2 */}
-              <div className="bg-transparent rounded-lg flex-1">
-                <h3 className="text-xl font-bold mb-2">Collaborative Design in Real-Time: Figma's Multiplayer Features</h3>
-                <p className="text-sm text-gray-400 mb-2">June 1, 2025</p>
-                <span className="inline-block px-3 py-1 rounded-full text-xs border border-gray-600 text-white">Figma multiplayer features</span>
-              </div>
-            </div>
-          </div>
+          <RecentBlogPosts />
         </div>
       </section>
     </div>
