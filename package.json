@@ -1,0 +1,9 @@
+{
+  "name": "ahmdsaladin-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "private": true,
+  "scripts": {
+    "build": "echo 'No build step required for static site'"
+  }
+} 
