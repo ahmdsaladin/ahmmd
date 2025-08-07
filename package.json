@@ -1,0 +1,21 @@
+{
+  "name": "ahmmd-wordpress-theme",
+  "version": "1.0.0",
+  "description": "Axtra WordPress Theme",
+  "main": "index.php",
+  "scripts": {
+    "build": "echo 'Static WordPress theme - no build required'",
+    "vercel-build": "echo 'Static WordPress theme - no build required'",
+    "dev": "echo 'Static site - no dev server needed'"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "axtra"
+  ],
+  "author": "Ahmad Saladin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
