@@ -18,6 +18,7 @@
       overflow: hidden;
       background-color: var(--pink-4);
       padding-top: 60px;
+      direction: ltr;
 
       @media #{$lg} {
         padding-top: 90px;

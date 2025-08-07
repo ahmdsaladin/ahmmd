@@ -1,6 +1,7 @@
 .switcher {
   &__area {
     position: relative;
+    direction: ltr;
 
     @media #{$sm} {
       display: none;
@@ -13,7 +14,7 @@
     height: 50px;
     background: var(--white);
     right: 0;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     z-index: 999;
     transition: all 0.3s;
@@ -45,7 +46,7 @@
     background: var(--black-2);
     position: fixed;
     right: -280px;
-    top: 50%;
+    top: 40%;
     z-index: 99;
     transform: translateY(-50%);
     font-family: $font_primary;
@@ -61,8 +62,13 @@
   &__item {
     margin-bottom: 30px;
 
+    &:nth-child(2) {
+      margin-bottom: 0;
+    }
+
     &:last-child {
       margin-bottom: 0;
+      display: none;
     }
   }
 

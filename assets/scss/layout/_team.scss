@@ -268,7 +268,8 @@
       padding: 60px 0;
     }
 
-    #btn_wrapper {
+    #btn_wrapper,
+    .btn_wrapper {
       width: 360px;
       height: 360px;
       margin: 0 auto;
@@ -384,7 +385,7 @@
     }
 
     @media #{$lg} {
-      padding-top: 90px;
+      padding-top: 120px;
       position: relative;
 
       .pb-140 {

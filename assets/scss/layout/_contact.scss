@@ -129,7 +129,8 @@
       height: 55px;
     }
 
-    #btn_wrapper {
+    #btn_wrapper,
+    .btn_wrapper {
       margin-top: -20px;
 
       @media #{$xl} {

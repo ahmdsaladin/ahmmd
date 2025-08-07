@@ -817,7 +817,8 @@
   &__btn {
     margin-top: 40px;
 
-    &#btn_wrapper {
+    &#btn_wrapper,
+    &.btn_wrapper {
       margin: 0 auto;
     }
   }

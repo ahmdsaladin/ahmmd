@@ -287,6 +287,10 @@
           top: 30px;
           background-color: var(--black-2);
 
+          @media #{$md} {
+            top: 20px;
+          }
+
           @media #{$sm} {
             width: 0;
           }
@@ -476,6 +480,11 @@
         background-color: var(--green);
         max-width: 470px;
         max-height: 650px;
+
+        @media #{$xxl} {
+          max-width: 430px;
+          max-height: 600px
+        }
 
         @media #{$xl} {
           max-width: 330px;
@@ -1018,6 +1027,12 @@
 
   &__main {
     &-wrapper {
+      .pp-title-wrap {
+        @media #{$xxl} {
+          transform: translateY(40px);
+        }
+      }
+
       @media (max-width: 1300px) {
         flex-wrap: wrap;
       }

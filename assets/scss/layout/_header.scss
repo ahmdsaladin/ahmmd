@@ -433,3 +433,11 @@
     }
   }
 }
+
+
+// Dark Version
+.dark {
+  .menu-icon img {
+    filter: invert(1);
+  }
+}

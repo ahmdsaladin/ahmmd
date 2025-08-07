@@ -67,6 +67,7 @@
   --black-4: #1d1d1d;
   --black-5: #343434;
   --black-6: #262626;
+  --black-7: #555555;
   --black-13: #666;
 
   --white: #fff;
@@ -107,15 +108,25 @@
   --d-black-3: #1A1A1A;
 }
 
+// Font Family | newYork
+@font-face {
+  font-family: newYork;
+  src: url('/assets/fonts/newyork/FontsFree-Net-NewYork.ttf');
+  font-weight: 400;
+}
+
+
 
 // Font Family
 $font_primary: 'Kanit', sans-serif;
 $font_awesome: 'Font Awesome 6 Free';
+$font_newyork: 'newYork';
 
 
 // Responsive Variable
 $xxxl: 'only screen and (min-width: 1920px)';
 $xxl: 'only screen and (min-width: 1400px) and (max-width: 1919px)';
+$xxl-1: 'only screen and (min-width: 1200px) and (max-width: 1600px)';
 $xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
 $lg: 'only screen and (min-width: 992px) and (max-width: 1199px)';
 $md: 'only screen and (min-width: 768px) and (max-width: 991px)';

@@ -333,7 +333,9 @@
     }
 
     &-btn {
-      #btn_wrapper {
+
+      #btn_wrapper,
+      .btn_wrapper {
         margin-left: auto;
         margin-right: -40px;
 
@@ -802,7 +804,8 @@
         border-color: var(--black-2);
       }
 
-      &#btn_wrapper {
+      &#btn_wrapper,
+      &.btn_wrapper {
         margin: 0 auto;
         margin-top: 100px;
 
@@ -833,7 +836,8 @@
         margin-top: 30px;
       }
 
-      #btn_wrapper {
+      #btn_wrapper,
+      .btn_wrapper {
         width: 200px;
         height: 200px;
         margin-right: -15px;

@@ -18,13 +18,13 @@
 
     &:hover {
       .main-dropdown {
-        top: 81px;
+        top: 75px;
         opacity: 1;
         visibility: visible;
       }
 
       .mega-menu {
-        top: 81px;
+        top: 75px;
         opacity: 1;
         visibility: visible;
       }
@@ -180,13 +180,17 @@
   z-index: 9;
   background-color: var(--black-2);
   text-align: left;
-  padding: 40px;
+  padding: 40px 200px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 30px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s;
+
+  @media #{$xl} {
+    padding: 40px 100px;
+  }
 
   li {
     padding: 0;
@@ -194,7 +198,7 @@
 
     a {
       color: var(--white);
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 500;
       padding: 10px;
       margin-bottom: 10px;
@@ -232,6 +236,10 @@
           display: block;
           margin-bottom: 0;
           text-transform: capitalize;
+
+          @media #{$xl} {
+            padding: 6px 12px;
+          }
         }
       }
     }
@@ -239,10 +247,21 @@
 
   &-2 {
     @extend .mega-menu;
-    width: 600px;
-    grid-template-columns: repeat(2, 1fr);
+    width: 1160px;
+    padding: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    grid-template-columns: repeat(4, 1fr);
   }
 
+}
+
+.menu-heading {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  padding-bottom: 10px;
+  text-transform: capitalize;
 }
 
 
@@ -334,7 +353,7 @@
   }
 
   @media #{$sm} {
-    padding-top: 60px;
+    padding-top: 40px;
   }
 
   .mean-nav>ul {
@@ -598,5 +617,11 @@
         text-shadow: 0 16px 0 var(--black-2);
       }
     }
+  }
+}
+
+.dark {
+  .menu-heading {
+    color: var(--black-2);
   }
 }

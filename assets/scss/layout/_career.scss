@@ -441,6 +441,7 @@
   &__link {
     text-align: right;
     overflow: hidden;
+    position: relative;
 
     span {
       &::after {

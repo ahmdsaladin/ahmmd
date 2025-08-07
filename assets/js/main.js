@@ -488,31 +488,133 @@
 
   /////////////////////////////////////////////////////
   // 10. Roll Slider
-  
+  var roll_slider = new Swiper(".roll__slider", {
+    loop: true,
+    freemode: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    centeredSlides: true,
+    allowTouchMove: false,
+    speed: 2000,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+      },
+      800: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+      1300: {
+        slidesPerView: 5,
+      },
+      1900: {
+        slidesPerView: 8,
+      },
+    },
+  });
+  // 10. Roll Slider
+  var roll_slider = new Swiper(".roll__slider2", {
+    loop: true,
+    freemode: true,
+    slidesPerView: 1,
+    spaceBetween: 60,
+    centeredSlides: false,
+    allowTouchMove: false,
+    speed: 10000,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: true,
+    },
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 11. Workflow Slider
-  
+  var workflow_slider = new Swiper(".workflow__slider", {
+    loop: true,
+    freemode: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 2000,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+    },
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 12. Team Slider
-  
+  var team_slider = new Swiper(".team__slider", {
+    spaceBetween: 30,
+    loop: true,
+    freemode: true,
+    slidesPerView: 1,
+    speed: 2000,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1000: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+    }
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 13. Testimonial Slider
-  
+  var testimonial_slider = new Swiper(".testimonial__slider", {
+    spaceBetween: 0,
+    loop: true,
+    freemode: true,
+    slidesPerView: 1,
+    speed: 2000,
+
+    navigation: {
+      nextEl: ".next-button",
+      prevEl: ".prev-button",
+    },
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 14. Testimonial Slider 3
-  
+  var testimonial_slider_3 = new Swiper(".testimonial__slider-3", {
+    spaceBetween: 0,
+    loop: true,
+    freemode: true,
+    slidesPerView: 1,
+    speed: 2000,
+
+    navigation: {
+      nextEl: ".next-button",
+      prevEl: ".prev-button",
+    },
+  });
   /////////////////////////////////////////////////////
 
 
@@ -538,12 +640,53 @@
 
   /////////////////////////////////////////////////////
   // 16. Service 1
+  $('.service__list a:nth-child(1)').addClass('active').siblings().removeClass('acitve');
+
+  $('.service__item').on('mousemove', function (e) {
+    var service_id = $(this).data("service");
+
+    $('.service__img.img-' + service_id).addClass('active').siblings().removeClass('active');
+    $('.shape-box-' + service_id).addClass('current').siblings().removeClass('current');
+
+    if (service_id != 1) {
+      $('.service__list a:nth-child(1)').removeClass('active');
+    }
+  });
+
+
+  $('.service__item').on('mouseout', function (e) {
+    var service_id = $(this).data("service");
+
+    $('.service__list a:nth-child(' + service_id + ')').addClass('active').siblings().removeClass('active');
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 17. Counter
-  
+  const about_counter = window.counterUp.default
+  const about_cb = entries => {
+
+    entries.forEach(entry => {
+      const el = entry.target
+      if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+        about_counter(el, {
+          duration: 1000,
+          delay: 16,
+        })
+        el.classList.add('is-visible')
+      }
+    })
+  }
+
+  const IO = new IntersectionObserver(about_cb, {
+    threshold: 1
+  })
+
+  const els = document.querySelectorAll('.counter__number');
+  els.forEach((el) => {
+    IO.observe(el)
+  });
   /////////////////////////////////////////////////////
 
 
@@ -627,13 +770,146 @@
 
   /////////////////////////////////////////////////////
   // 22. Service 6
-  
+  if (device_width > 1200) {
+    gsap.to(".service__list-6", {
+      scrollTrigger: {
+        trigger: ".service__area-6",
+        pin: ".service__list-6",
+        pinSpacing: true,
+        start: "top top",
+        end: "bottom bottom"
+      }
+    })
+
+    gsap.to(".service__image-wrap", {
+      scrollTrigger: {
+        trigger: ".service__area-6",
+        pin: ".mid-content",
+        pinSpacing: true,
+        start: "top top",
+        end: "bottom bottom",
+        markers: false
+      }
+    })
+
+    let service_images = gsap.utils.toArray(".service__image")
+    let service_imagess = gsap.utils.toArray(".service__image img")
+    let service_items = gsap.utils.toArray(".service__item-6")
+
+    if (service_items) {
+      service_items.forEach((image, i) => {
+        console.log(service_images[i].img)
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: image,
+            scrub: 1,
+            start: "top top-=600",
+            markers: false,
+          }
+        });
+        tl.to(service_images[i], {
+          zIndex: "1",
+        })
+        tl.to(service_imagess[i], {
+          opacity: 0,
+          duration: 1,
+          scale: 1.2,
+          ease: "power4.out"
+        }, "-=1")
+      })
+    }
+
+    let navItems = gsap.utils.toArray(".service__list-6 li a")
+    if (navItems) {
+      navItems.forEach((nav) => {
+        nav.addEventListener("click", (e) => {
+          e.preventDefault();
+          const ids = nav.getAttribute("href")
+          gsap.to(window, { duration: 0.5, scrollTo: ids, ease: "power4.out" });
+        })
+      })
+    }
+
+    // Active Nav
+    $(document).on('scroll', function () {
+      $('.service__item-6').each(function () {
+        if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
+          var sec_id = $(this).data('secid');
+
+          $('.service__list-6 li:nth-child(' + sec_id + ')').addClass('active').siblings().removeClass('active');
+        }
+      });
+    });
+  }
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 23. Choose Section
- 
+  if (device_width > 1200) {
+
+    var workflow_section_3 = document.querySelector('.workflow__wrapper-3');
+    if (workflow_section_3) {
+
+      let duration = 1,
+        sections = gsap.utils.toArray(".wf_panel"),
+        sectionIncrement = duration / (sections.length - 1),
+        tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".workflow__wrapper-3",
+            pin: true,
+            scrub: 1,
+            start: "top top",
+            end: "+=5000"
+          }
+        });
+
+      tl.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        duration: duration,
+        ease: "none"
+      });
+
+      sections.forEach((section, index) => {
+        let tween = gsap.from(section, {
+          opacity: 0,
+          scale: 0.6,
+          duration: 0.5,
+          force3D: true,
+          paused: true
+        });
+        addSectionCallbacks(tl, {
+          start: sectionIncrement * (index - 0.99),
+          end: sectionIncrement * (index + 0.99),
+          onEnter: () => tween.play(),
+          onLeave: () => tween.reverse(),
+          onEnterBack: () => tween.play(),
+          onLeaveBack: () => tween.reverse()
+        });
+        index || tween.progress(1);
+      });
+
+      function addSectionCallbacks(timeline, { start, end, param, onEnter, onLeave, onEnterBack, onLeaveBack }) {
+        let trackDirection = animation => {
+          let onUpdate = animation.eventCallback("onUpdate"),
+            prevTime = animation.time();
+          animation.direction = animation.reversed() ? -1 : 1;
+          animation.eventCallback("onUpdate", () => {
+            let time = animation.time();
+            if (prevTime !== time) {
+              animation.direction = time < prevTime ? -1 : 1;
+              prevTime = time;
+            }
+            onUpdate && onUpdate.call(animation);
+          });
+        },
+          empty = v => v;
+        timeline.direction || trackDirection(timeline);
+        start >= 0 && timeline.add(() => ((timeline.direction < 0 ? onLeaveBack : onEnter) || empty)(param), start);
+        end <= timeline.duration() && timeline.add(() => ((timeline.direction < 0 ? onEnterBack : onLeave) || empty)(param), end);
+      }
+    }
+  }
   /////////////////////////////////////////////////////
 
 
@@ -847,7 +1123,6 @@
       let font_size = font_sizes.getPropertyValue("font-size");
       let size_in_number = parseInt(font_size.replace("px", ""));
       let new_size = parseInt(size_in_number / 3)
-
       new_size = new_size + "px"
       if (item.innerHTML == " ") {
         item.style.width = new_size
@@ -1029,20 +1304,136 @@
 
   /////////////////////////////////////////////////////
   // 38. Portfolio Animation
-  
+  if (device_width > 767) {
+    let portfolioline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".portfolio__area",
+        start: "top center-=200",
+        pin: ".portfolio__text",
+        end: "bottom bottom+=80",
+        markers: false,
+        pinSpacing: false,
+        scrub: 1,
+      }
+    })
+
+    portfolioline.to(".portfolio__text", {
+      scale: 3,
+      duration: 1
+    })
+    portfolioline.to(".portfolio__text", {
+      scale: 3,
+      duration: 1
+    })
+    portfolioline.to(".portfolio__text", {
+      scale: 1,
+      duration: 1
+    }, "+=2")
+  }
+
+
+  let portfolio_lists = gsap.utils.toArray(".portfolio__item")
+  portfolio_lists.forEach((portfolio, i) => {
+    gsap.set(portfolio, { opacity: 0.7 })
+    let t1 = gsap.timeline()
+
+    t1.set(portfolio, {
+      position: "relative",
+    })
+    t1.to(portfolio, {
+      scrollTrigger: {
+        trigger: portfolio,
+        scrub: 2,
+        duration: 1.5,
+        start: "top bottom+=100",
+        end: "bottom center",
+        markers: false
+      },
+      scale: 1,
+      opacity: 1,
+      rotateX: 0,
+    })
+  });
+
+  gsap.to(".bg_image img", {
+    xPercent: -18,
+    scrollTrigger: {
+      trigger: ".portfolio__area",
+      start: "top top",
+      end: "bottom center",
+      pin: ".bg_image",
+      scrub: 3
+    }
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 39. Portfolio Slider 2
-  
+  var portfolio_slider = new Swiper(".portfolio__slider-2", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    effect: "fade",
+    speed: 1500,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (i, className) {
+        return `
+        <button class="${className}">
+          <svg class="circle-progress"><circle class="circle-origin" r="24.5" cx="25" cy="25"></circle></svg><span></span>
+        </button>
+      `;
+      }
+    }
+  });
 
+  var portfolio_project_thumbs = new Swiper(".portfolio__project-thumbs", {
+    loop: true,
+    spaceBetween: 0,
+    slidesPerView: 1,
+    freeMode: true,
+    watchSlidesProgress: true,
+    allowTouchMove: false,
+  });
+  var portfolio_project = new Swiper(".portfolio__project-slider", {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".pp-next",
+      prevEl: ".pp-prev",
+    },
+    thumbs: {
+      swiper: portfolio_project_thumbs,
+    },
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 40. Portfolio Slider 3
-  
+  var portfolio_slider_3 = new Swiper(".portfolio__slider-3", {
+    speed: 1500,
+    loop: true,
+    effect: 'fade',
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".pp-next",
+      prevEl: ".pp-prev",
+    },
+  });
   /////////////////////////////////////////////////////
 
 
@@ -1807,20 +2198,96 @@
 
   /////////////////////////////////////////////////////
   // 59. Portfolio Main Slider
-  
+  var breakpoint = window.matchMedia('( max-width: 1300px )');
+  var pp_main_wrap = document.querySelector('.portfolio__main-slider');
+
+  if (pp_main_wrap) {
+    var enableSwiper = function () {
+      var pp_main = new Swiper(".portfolio__main-slider", {
+        allowTouchMove: false,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        mousewheel: true,
+        effect: "fade",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        }
+      });
+    };
+
+    var breakpointChecker = function () {
+      if (breakpoint.matches === true) {
+        if (pp_main !== undefined) pp_main.destroy(true, true);
+        return;
+      } else if (breakpoint.matches === false) {
+        return enableSwiper();
+      }
+    };
+
+    breakpoint.addListener(breakpointChecker);
+    breakpointChecker();
+  }
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 60. Portfolio Slider 6
-  
+  var portfolio_slider_6 = new Swiper(".portfolio__slider-4", {
+    speed: 1500,
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 15,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1000: {
+        slidesPerView: 2,
+        spaceBetween: 60,
+      },
+      1200: {
+        slidesPerView: 2,
+        spaceBetween: 90,
+      },
+      1400: {
+        slidesPerView: 2,
+        spaceBetween: 120,
+      },
+    },
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   // 61. Testimonial Slider 4
 
-  
+  var testimonial_slider_4 = new Swiper(".testimonial__slider-4", {
+    spaceBetween: 20,
+    loop: true,
+    freemode: true,
+    slidesPerView: 3,
+    speed: 2000,
+    pagination: {
+      el: ".pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".next-button",
+      prevEl: ".prev-button",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
   /////////////////////////////////////////////////////
 
 
@@ -1902,7 +2369,27 @@
 
   /////////////////////////////////////////////////////
   // 63. Portfolio Slider 7
-  
+  var portfolio_slider_7 = new Swiper(".portfolio__slider-7", {
+    loop: true,
+    freemode: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    centeredSlides: true,
+    speed: 2000,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      800: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 70,
+      },
+    },
+  });
   /////////////////////////////////////////////////////
 
 
@@ -2352,7 +2839,43 @@
 
 
   // HERO - 10
-  
+  var hero10 = new Swiper(".hero10_activition", {
+    direction: 'horizontal',
+    loop: true,
+    speed: 1500,
+    slidesPerView: 4,
+    spaceBetween: 30,
+    mousewheel: true,
+    mousewheelControl: true,
+    keyboard: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+      clickable: true,
+
+      renderFraction: function (currentClass, totalClass) {
+        return '<span class="' + currentClass + '"></span>' + ' <span><i class="fa-solid fa-minus increase-dash"></i></span> ' + '<span class="' + totalClass + '"></span>';
+      }
+    },
+    breakpoints: {
+      1400: {
+        slidesPerView: 4,
+      },
+      1000: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1,
+      },
+    }
+  });
 
 
   // =========================================================
@@ -2431,7 +2954,248 @@
   // =================================================================
 
 
-  
+  // Home 9
+  let slider_9_image = document.querySelector(".slider9_images");
+
+  if (slider_9_image) {
+    document.querySelector(".slider9_images").style.display = 'none';
+    var cols = 1;
+    if (device_width > 767) {
+      cols = 3;
+    } else {
+      cols = 1;
+    }
+
+    const main = document.getElementById("main");
+    let parts = [];
+
+    var content_list = document.querySelectorAll('.slide9_content');
+    var title_list = document.querySelectorAll('.slide9_content h2');
+
+
+    var content_list = document.querySelectorAll('.slide9_content p');
+
+    var images_listss = document.querySelectorAll('.slider9_image img');
+    var images = []
+    var titles = []
+    var contents = []
+
+    images_listss.forEach((item) => {
+      let srcs = item.getAttribute("src")
+      images.push(srcs)
+    })
+    title_list.forEach((item) => {
+      let title = item.innerHTML
+      titles.push(title)
+    })
+    content_list.forEach((item) => {
+      let content = item.innerHTML
+      contents.push(content)
+    })
+
+
+    let current = 0;
+    let playing = false;
+
+
+    for (let col = 0; col < cols; col++) {
+      let part = document.createElement("div");
+      part.className = "part";
+      let el = document.createElement("a");
+      el.className = "section";
+      el.href = "http://127.0.0.1:5500/service-details.html"
+
+      let img = document.createElement("img");
+      img.src = images[current];
+      el.appendChild(img);
+
+      let h2 = document.createElement("h2");
+      h2.innerHTML = titles[current];
+      el.appendChild(h2);
+
+      let p = document.createElement("p");
+      p.innerHTML = contents[current];
+      el.appendChild(p);
+
+
+      part.style.setProperty("--x", (-100 / cols) * col + "vw");
+      part.appendChild(el);
+      main.appendChild(part);
+      parts.push(part);
+    }
+
+    // Cursor Pointer and Circle event
+    function lerp(start, end, amount) {
+      return (1 - amount) * start + amount * end;
+    }
+
+    const cursor = document.createElement("div");
+    cursor.className = "cursor";
+
+    const cursorF = document.createElement("div");
+    cursorF.className = "cursor-f";
+    let cursorX = 0;
+    let cursorY = 0;
+    let pageX = 0;
+    let pageY = 0;
+    let size = 8;
+    let sizeF = 36;
+    let followSpeed = 0.16;
+
+    document.body.appendChild(cursor);
+    document.body.appendChild(cursorF);
+
+    if ("ontouchstart" in window) {
+      cursor.style.display = "none";
+      cursorF.style.display = "none";
+    }
+
+    cursor.style.setProperty("--size", size + "px");
+    cursorF.style.setProperty("--size", sizeF + "px");
+
+    window.addEventListener("mousemove", function (e) {
+      pageX = e.clientX;
+      pageY = e.clientY;
+      cursor.style.left = e.clientX - size / 2 + "px";
+      cursor.style.top = e.clientY - size / 2 + "px";
+    });
+
+    function loop() {
+      cursorX = lerp(cursorX, pageX, followSpeed);
+      cursorY = lerp(cursorY, pageY, followSpeed);
+      cursorF.style.top = cursorY - sizeF / 2 + "px";
+      cursorF.style.left = cursorX - sizeF / 2 + "px";
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    // Rollover UP & Down Mouse Wheel Navigation
+    let animOptions = {
+      duration: 2.3,
+      ease: Power4.easeInOut
+    };
+
+    function go(dir) {
+      if (!playing) {
+        playing = true;
+        if (current + dir < 0) current = images.length - 1;
+        else if (current + dir >= images.length) current = 0;
+        else current += dir;
+
+        function up(part, next) {
+          part.appendChild(next);
+          gsap
+            .to(part, { ...animOptions, y: -window.innerHeight })
+            .then(function () {
+              part.children[0].remove();
+              gsap.to(part, { duration: 0, y: 0 });
+            });
+        }
+
+        function down(part, next) {
+          part.prepend(next);
+          gsap.to(part, { duration: 0, y: -window.innerHeight });
+          gsap.to(part, { ...animOptions, y: 0 }).then(function () {
+            part.children[1].remove();
+            playing = false;
+          });
+        }
+
+        for (let p in parts) {
+          let part = parts[p];
+          let next = document.createElement("a");
+          next.href = "http://127.0.0.1:5500/service-details.html"
+          next.className = "section";
+          let img = document.createElement("img");
+          img.src = images[current];
+          next.appendChild(img);
+
+          let h2 = document.createElement("h2");
+          h2.innerHTML = titles[current];
+          next.appendChild(h2);
+
+          let pa = document.createElement("p");
+          pa.innerHTML = contents[current];
+          next.appendChild(pa);
+
+
+
+          if ((p - Math.max(0, dir)) % 2) {
+            down(part, next);
+          } else {
+            up(part, next);
+          }
+        }
+      }
+    }
+
+    //Press Up & Down Keyboard Arrow Event
+    window.addEventListener("keydown", function (e) {
+      if (["ArrowDown", "ArrowRight"].includes(e.key)) {
+        go(1);
+      } else if (["ArrowUp", "ArrowLeft"].includes(e.key)) {
+        go(-1);
+      }
+    });
+
+    // Cursor Invent Target Touches
+    let startY;
+    let endY;
+    let clicked = false;
+
+    function mousedown(e) {
+      gsap.to(cursor, { scale: 4.5 });
+      gsap.to(cursorF, { scale: 0.4 });
+
+      clicked = true;
+      startY = e.clientY || e.touches[0].clientY || e.targetTouches[0].clientY;
+    }
+
+    function mouseup(e) {
+      gsap.to(cursor, { scale: 1 });
+      gsap.to(cursorF, { scale: 1 });
+
+      endY = e.clientY || endY;
+      if (clicked && startY && Math.abs(startY - endY) >= 40) {
+        go(!Math.min(0, startY - endY) ? 1 : -1);
+        clicked = false;
+        startY = null;
+        endY = null;
+      }
+    }
+
+    window.addEventListener("mousedown", mousedown, false);
+    window.addEventListener("touchstart", mousedown, false);
+    window.addEventListener(
+      "touchmove",
+      function (e) {
+        if (clicked) {
+          endY = e.touches[0].clientY || e.targetTouches[0].clientY;
+        }
+      },
+      false
+    );
+    window.addEventListener("touchend", mouseup, false);
+    window.addEventListener("mouseup", mouseup, false);
+
+    //Mouse Wheel Scroll Transition
+    let scrollTimeout;
+    function wheel(e) {
+      clearTimeout(scrollTimeout);
+      setTimeout(function () {
+        if (e.deltaY < -40) {
+          go(-1);
+        } else if (e.deltaY >= 40) {
+          go(1);
+        }
+      });
+    }
+    window.addEventListener("mousewheel", wheel, false);
+    window.addEventListener("wheel", wheel, false);
+
+    let alls = document.querySelectorAll('#main .part');
+    alls[0].classList.add('showed');
+  }
 
 
   // Tilt JS
@@ -2452,9 +3216,40 @@
     });
   }
 
-	////////////////////////////////////////////////
+
+
+  // Home 16
+  var shocase_list_16 = document.querySelectorAll(".showcase__content-16");
+
+  shocase_list_16.forEach((shocase16) => {
+    gsap.to(shocase16, {
+      scrollTrigger: {
+        trigger: shocase16,
+        pin: shocase16,
+        pinSpacing: false,
+        start: "top top",
+        delay: 1
+      }
+    });
+  });
+
+
+  ////////////////////////////////////////////////
   // Home 8
-  
+  let imageTl_8 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".portfolio__big",
+      start: "top top+=90",
+      pin: true,
+      markers: false,
+      scrub: 1,
+      pinSpacing: false,
+      end: "bottom bottom+=150",
+    }
+  });
+  imageTl_8.to(".portfolio__big-inner", {
+    width: "100%",
+  });
   ///////////////////////////////////////////////////
 
 
@@ -2479,13 +3274,80 @@
 
   /////////////////////////////////////////////////////
   // Activate MixitUp
-  
+  let mixitup_17 = document.querySelector('.showcase-mixitup');
+  if (mixitup_17) {
+    var mixer = mixitup('.showcase-mixitup');
+  }
+  /////////////////////////////////////////////////////
+
+
+  /////////////////////////////////////////////////////
+  // Home 17
+  gsap.to(".showcase__menu-4", {
+    scrollTrigger: {
+      trigger: ".showcase__area-4",
+      pin: ".showcase__menu-4",
+      pinSpacing: false,
+      start: "top top",
+      end: "bottom center",
+      markers: false,
+      delay: 1
+    }
+  });
   /////////////////////////////////////////////////////
 
 
   /////////////////////////////////////////////////////
   //
-  
+  let mainSliderSelector = '.main-slider',
+    thumbSliderSelector = '.thumb-slider';
+
+  // Main Slider
+  let mainSliderOptions = {
+    loop: true,
+    speed: 1500,
+    parallax: true,
+    mousewheel: true,
+    loopAdditionalSlides: 6,
+    grabCursor: true,
+    effect: "fade",
+    watchSlidesProgress: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  };
+  let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
+
+  // thumb Slider
+  let thumbSliderOptions = {
+    loop: true,
+    loopAdditionalSlides: 5,
+    speed: 1500,
+    spaceBetween: 15,
+    centeredSlides: true,
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+    direction: 'vertical',
+    breakpoints: {
+      200: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 5,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+      1400: {
+        slidesPerView: 7,
+      },
+    },
+  };
+  let thumbSlider = new Swiper(thumbSliderSelector, thumbSliderOptions);
+
+  mainSlider.controller.control = thumbSlider;
+  thumbSlider.controller.control = mainSlider;
 
   /////////////////////////////////////////////////////
 
@@ -2556,3 +3418,4 @@
 
 
 })(jQuery);
+
