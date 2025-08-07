@@ -1,0 +1,22 @@
+{
+  "name": "ahmmd-html-template",
+  "version": "1.0.0",
+  "description": "Professional HTML Template",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static HTML site - no build required'",
+    "vercel-build": "echo 'Static HTML site - no build required'",
+    "dev": "echo 'Static site - no dev server needed'"
+  },
+  "keywords": [
+    "html",
+    "template",
+    "static",
+    "website"
+  ],
+  "author": "Ahmad Saladin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
