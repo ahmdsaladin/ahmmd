@@ -1,0 +1,1 @@
+{"framework":"remix","buildCommand":"npx remix vite:build","devCommand":"npx remix vite:dev"}
