@@ -1,1 +1,1 @@
-{"framework":"remix","buildCommand":"npx remix vite:build","devCommand":"npx remix vite:dev"}
+{"framework":"remix","buildCommand":"npm run build","devCommand":"npm run dev","outputDirectory":"build/client"}
