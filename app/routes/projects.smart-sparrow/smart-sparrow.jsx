@@ -62,7 +62,7 @@ import {
 } from '~/layouts/project';
 import { baseMeta } from '~/utils/meta';
 import { Suspense, lazy, useMemo } from 'react';
-import { media } from '~/utils/style';
+import { cssProps, msToNum, numToMs, media } from '~/utils/style';
 import styles from './smart-sparrow.module.css';
 
 const Earth = lazy(() => import('./earth').then(module => ({ default: module.Earth })));
@@ -85,7 +85,9 @@ export const meta = () => {
 };
 
 export const SmartSparrow = () => {
-
+  // Always use dark theme
+  const isDark = true;
+  const theme = 'dark';
 
   return (
     <>
@@ -106,7 +108,7 @@ export const SmartSparrow = () => {
           <ProjectSectionContent>
             <ProjectImage
               raised
-              key={index}
+              key="lesson-builder"
               srcSet={
                 isDark
                   ? `${imageSprLessonBuilderDark} 1280w, ${imageSprLessonBuilderDarkLarge} 2560w`
@@ -141,7 +143,7 @@ export const SmartSparrow = () => {
         <ProjectSection light={isDark}>
           <ProjectSectionContent>
             <Image
-              key={index}
+              key="lesson-builder"
               srcSet={
                 isDark
                   ? `${imageSprComponentsDark} 1024w, ${imageSprComponentsDarkLarge} 2048w`
@@ -181,7 +183,7 @@ export const SmartSparrow = () => {
           <ProjectSectionContent>
             <Image
               raised
-              key={index}
+              key="lesson-builder"
               srcSet={
                 isDark
                   ? `${imageSprDesignSystemDark} 1280w, ${imageSprDesignSystemDarkLarge} 2560w`
@@ -261,7 +263,7 @@ export const SmartSparrow = () => {
             </ProjectTextRow>
             <Image
               raised
-              key={index}
+              key="lesson-builder"
               srcSet={
                 isDark
                   ? `${imageSprStoryboarderDark} 1280w, ${imageSprStoryboarderDarkLarge} 2560w`
