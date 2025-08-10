@@ -9,5 +9,3 @@ node_modules
 
 public/draco
 storybook-static
-
-.vercel
