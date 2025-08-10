@@ -47,7 +47,7 @@ import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
 import { Link } from '~/components/link';
 import { SegmentedControl, SegmentedControlOption } from '~/components/segmented-control';
-import { ThemeProvider, useTheme } from '~/components/theme-provider';
+
 import {
   ProjectBackground,
   ProjectContainer,
@@ -85,13 +85,7 @@ export const meta = () => {
 };
 
 export const SmartSparrow = () => {
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === 'dark';
-  const themes = ['dark', 'light'];
 
-  const handleThemeChange = index => {
-    toggleTheme(themes[index]);
-  };
 
   return (
     <>
@@ -112,7 +106,7 @@ export const SmartSparrow = () => {
           <ProjectSectionContent>
             <ProjectImage
               raised
-              key={theme}
+              key={index}
               srcSet={
                 isDark
                   ? `${imageSprLessonBuilderDark} 1280w, ${imageSprLessonBuilderDarkLarge} 2560w`
@@ -147,7 +141,7 @@ export const SmartSparrow = () => {
         <ProjectSection light={isDark}>
           <ProjectSectionContent>
             <Image
-              key={theme}
+              key={index}
               srcSet={
                 isDark
                   ? `${imageSprComponentsDark} 1024w, ${imageSprComponentsDarkLarge} 2048w`
@@ -160,16 +154,15 @@ export const SmartSparrow = () => {
                   ? imageSprComponentsDarkPlaceholder
                   : imageSprComponentsLightPlaceholder
               }
-              alt={`A set of ${theme} themed components for the aero design system`}
+              alt="A set of components for the aero design system"
               sizes="100vw"
             />
             <ProjectTextRow>
               <SegmentedControl
-                currentIndex={themes.indexOf(theme)}
-                onChange={handleThemeChange}
+                currentIndex={0}
+                onChange={() => {}}
               >
-                <SegmentedControlOption>Dark theme</SegmentedControlOption>
-                <SegmentedControlOption>Light theme</SegmentedControlOption>
+                <SegmentedControlOption>Dark</SegmentedControlOption>
               </SegmentedControl>
             </ProjectTextRow>
             <ProjectTextRow>
@@ -188,7 +181,7 @@ export const SmartSparrow = () => {
           <ProjectSectionContent>
             <Image
               raised
-              key={theme}
+              key={index}
               srcSet={
                 isDark
                   ? `${imageSprDesignSystemDark} 1280w, ${imageSprDesignSystemDarkLarge} 2560w`
@@ -215,7 +208,7 @@ export const SmartSparrow = () => {
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
-        <ThemeProvider theme="dark" data-invert>
+        <div>
           <ProjectSection
             backgroundOverlayOpacity={0.5}
             backgroundElement={
@@ -253,7 +246,7 @@ export const SmartSparrow = () => {
               />
             </ProjectSectionColumns>
           </ProjectSection>
-        </ThemeProvider>
+        </div>
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
@@ -268,7 +261,7 @@ export const SmartSparrow = () => {
             </ProjectTextRow>
             <Image
               raised
-              key={theme}
+              key={index}
               srcSet={
                 isDark
                   ? `${imageSprStoryboarderDark} 1280w, ${imageSprStoryboarderDarkLarge} 2560w`
@@ -340,7 +333,7 @@ export const SmartSparrow = () => {
             </div>
           </ProjectSectionColumns>
         </ProjectSection>
-        <ThemeProvider theme="dark" data-invert>
+        <div>
           <Suspense>
             <Earth
               className={styles.earth}
@@ -520,7 +513,7 @@ export const SmartSparrow = () => {
               />
             </Earth>
           </Suspense>
-        </ThemeProvider>
+        </div>
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow center centerMobile noMargin>
