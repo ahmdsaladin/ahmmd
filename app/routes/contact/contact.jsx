@@ -7,7 +7,17 @@ import { Icon } from '~/components/icon';
 import { Input } from '~/components/input';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
-import { tokens } from '~/components/theme-provider/theme';
+// Theme colors (dark theme by default)
+const tokens = {
+  colors: {
+    primary: '#00c2ff',
+    background: '#0a0a0a',
+    surface: '#1a1a1a',
+    text: '#ffffff',
+    textSecondary: '#888888',
+    border: '#333333'
+  }
+};
 import { Transition } from '~/components/transition';
 import { useFormInput } from '~/hooks';
 import { useRef } from 'react';

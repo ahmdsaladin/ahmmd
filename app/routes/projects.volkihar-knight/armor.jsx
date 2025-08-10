@@ -6,7 +6,7 @@ import vkpy from '~/assets/volkihar-cube-py.jpg';
 import vkpz from '~/assets/volkihar-cube-pz.jpg';
 import armor from '~/assets/volkihar-knight.glb';
 import { Loader } from '~/components/loader';
-import { tokens } from '~/components/theme-provider/theme';
+import { tokens } from '~/utils/tokens';
 import { Transition } from '~/components/transition';
 import { useReducedMotion, useSpring } from 'framer-motion';
 import { useInViewport } from '~/hooks';

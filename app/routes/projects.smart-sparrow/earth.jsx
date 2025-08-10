@@ -8,7 +8,7 @@ import mwpz from '~/assets/milkyway-pz.hdr';
 import milkywayBg from '~/assets/milkyway.jpg';
 import { Loader } from '~/components/loader';
 import { Section } from '~/components/section';
-import { tokens } from '~/components/theme-provider/theme';
+import { tokens } from '~/utils/tokens';
 import { Transition } from '~/components/transition';
 import { useReducedMotion, useSpring } from 'framer-motion';
 import { useInViewport, useWindowSize } from '~/hooks';

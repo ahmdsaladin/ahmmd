@@ -4,7 +4,7 @@ import { Heading } from '~/components/heading';
 import { deviceModels } from '~/components/model/device-models';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
-import { useTheme } from '~/components/theme-provider';
+// Using dark theme by default
 import { Transition } from '~/components/transition';
 import { Loader } from '~/components/loader';
 import { useWindowSize } from '~/hooks';
@@ -33,7 +33,7 @@ export function ProjectSummary({
 }) {
   const [focused, setFocused] = useState(false);
   const [modelLoaded, setModelLoaded] = useState(false);
-  const { theme } = useTheme();
+  const theme = 'dark'; // Always use dark theme
   const { width } = useWindowSize();
   const isHydrated = useHydrated();
   const titleId = `${id}-title`;
