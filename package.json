@@ -18,7 +18,8 @@
     "deploy": "npm run build && wrangler pages deploy ./build/client --project-name portfolio",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "deploy:storybook": "wrangler pages deploy ./storybook-static --project-name portfolio-storybook --branch main"
+    "deploy:storybook": "wrangler pages deploy ./storybook-static --project-name portfolio-storybook --branch main",
+    "cf:build": "npm run build && npm run wrangler pages publish ./build/client --project-name=ahmmd"
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.515.0",
@@ -67,8 +68,5 @@
     "vite": "^5.1.0",
     "vite-jsconfig-paths": "^2.0.1",
     "wrangler": "^3.24.0"
-  },
-  "engines": {
-    "node": ">=19.9.0"
   }
 }

@@ -1,10 +1,6 @@
 name = "ahmmd"
-main = "build/worker.js"
 compatibility_date = "2023-10-30"
 compatibility_flags = ["nodejs_compat"]
-
-[site]
-bucket = "./build/client"
 
 [build]
 command = "npm run build"
@@ -12,8 +8,3 @@ command = "npm run build"
 [build.upload]
 format = "modules"
 main = "build/worker.js"
-
-[[routers]]
-# Handle all requests
-rule = "/*"
-script = "build/worker.js"
