@@ -8,3 +8,9 @@ command = "npm run build"
 [build.upload]
 format = "modules"
 main = "build/worker.js"
+
+# Bundle settings to properly handle AWS SDK
+[build.upload.rules]
+[[build.upload.rules]]
+type = "ESModule"
+glob = "**/*.js"

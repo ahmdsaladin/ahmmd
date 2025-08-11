@@ -12,6 +12,13 @@ export default defineConfig({
   assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
   build: {
     assetsInlineLimit: 1024,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'aws-sdk': ['@aws-sdk/client-ses', '@aws-sdk/core']
+        }
+      }
+    },
   },
   server: {
     port: 7777,
@@ -35,6 +42,7 @@ export default defineConfig({
     jsconfigPaths(),
   ],
   ssr: {
-    noExternal: ['@aws-sdk/client-ses'],
+    noExternal: ['@aws-sdk/client-ses', '@aws-sdk/core'],
+    target: 'webworker',
   },
 });
