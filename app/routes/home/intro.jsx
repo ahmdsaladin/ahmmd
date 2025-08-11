@@ -1,7 +1,8 @@
 import { DecoderText } from '~/components/decoder-text';
 import { Heading } from '~/components/heading';
 import { Section } from '~/components/section';
-import { tokens } from '~/utils/tokens';
+import { useTheme } from '~/components/theme-provider';
+import { tokens } from '~/components/theme-provider/theme';
 import { Transition } from '~/components/transition';
 import { VisuallyHidden } from '~/components/visually-hidden';
 import { Link as RouterLink } from '@remix-run/react';
@@ -17,10 +18,10 @@ const DisplacementSphere = lazy(() =>
 );
 
 export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
+  const { theme } = useTheme();
   const { disciplines } = config;
   const [disciplineIndex, setDisciplineIndex] = useState(0);
-  const theme = 'dark'; // Always use dark theme
-  const prevTheme = theme;
+  const prevTheme = usePrevious(theme);
   const introLabel = [disciplines.slice(0, -1).join(', '), disciplines.slice(-1)[0]].join(
     ', and '
   );

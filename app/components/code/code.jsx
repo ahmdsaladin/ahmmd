@@ -1,14 +1,14 @@
 import { Button } from '~/components/button';
 import { Icon } from '~/components/icon';
 import { Text } from '~/components/text';
-// Using dark theme by default
+import { useTheme } from '~/components/theme-provider';
 import { Transition } from '~/components/transition';
 import { useRef, useState } from 'react';
 import styles from './code.module.css';
 
 export const Code = props => {
   const [copied, setCopied] = useState(false);
-  const theme = 'dark'; // Always use dark theme
+  const { theme } = useTheme();
   const elementRef = useRef();
   const copyTimeout = useRef();
   const lang = props.className?.split('-')[1];

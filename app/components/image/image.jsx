@@ -1,6 +1,6 @@
 import { Button } from '~/components/button';
 import { Icon } from '~/components/icon';
-// Using dark theme by default
+import { useTheme } from '~/components/theme-provider';
 import { useReducedMotion } from 'framer-motion';
 import { useHasMounted, useInViewport } from '~/hooks';
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
@@ -20,7 +20,7 @@ export const Image = ({
   ...rest
 }) => {
   const [loaded, setLoaded] = useState(false);
-  const theme = 'dark'; // Always use dark theme
+  const { theme } = useTheme();
   const containerRef = useRef();
   const src = baseSrc || srcSet.split(' ')[0];
   const inViewport = useInViewport(containerRef, !getIsVideo(src));

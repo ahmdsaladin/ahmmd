@@ -1,4 +1,4 @@
-// Using dark theme by default
+import { useTheme } from '~/components/theme-provider';
 import { Transition } from '~/components/transition';
 import { useReducedMotion, useSpring } from 'framer-motion';
 import { useInViewport, useWindowSize } from '~/hooks';
@@ -30,7 +30,7 @@ const springConfig = {
 };
 
 export const DisplacementSphere = props => {
-  const theme = 'dark'; // Always use dark theme
+  const { theme } = useTheme();
   const start = useRef(Date.now());
   const canvasRef = useRef();
   const mouse = useRef();

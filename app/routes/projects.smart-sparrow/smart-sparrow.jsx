@@ -47,7 +47,7 @@ import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
 import { Link } from '~/components/link';
 import { SegmentedControl, SegmentedControlOption } from '~/components/segmented-control';
-
+import { ThemeProvider, useTheme } from '~/components/theme-provider';
 import {
   ProjectBackground,
   ProjectContainer,
@@ -62,7 +62,7 @@ import {
 } from '~/layouts/project';
 import { baseMeta } from '~/utils/meta';
 import { Suspense, lazy, useMemo } from 'react';
-import { cssProps, msToNum, numToMs, media } from '~/utils/style';
+import { media } from '~/utils/style';
 import styles from './smart-sparrow.module.css';
 
 const Earth = lazy(() => import('./earth').then(module => ({ default: module.Earth })));
@@ -85,9 +85,13 @@ export const meta = () => {
 };
 
 export const SmartSparrow = () => {
-  // Always use dark theme
-  const isDark = true;
-  const theme = 'dark';
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
+  const themes = ['dark', 'light'];
+
+  const handleThemeChange = index => {
+    toggleTheme(themes[index]);
+  };
 
   return (
     <>
@@ -108,7 +112,7 @@ export const SmartSparrow = () => {
           <ProjectSectionContent>
             <ProjectImage
               raised
-              key="lesson-builder"
+              key={theme}
               srcSet={
                 isDark
                   ? `${imageSprLessonBuilderDark} 1280w, ${imageSprLessonBuilderDarkLarge} 2560w`
@@ -143,7 +147,7 @@ export const SmartSparrow = () => {
         <ProjectSection light={isDark}>
           <ProjectSectionContent>
             <Image
-              key="lesson-builder"
+              key={theme}
               srcSet={
                 isDark
                   ? `${imageSprComponentsDark} 1024w, ${imageSprComponentsDarkLarge} 2048w`
@@ -156,15 +160,16 @@ export const SmartSparrow = () => {
                   ? imageSprComponentsDarkPlaceholder
                   : imageSprComponentsLightPlaceholder
               }
-              alt="A set of components for the aero design system"
+              alt={`A set of ${theme} themed components for the aero design system`}
               sizes="100vw"
             />
             <ProjectTextRow>
               <SegmentedControl
-                currentIndex={0}
-                onChange={() => {}}
+                currentIndex={themes.indexOf(theme)}
+                onChange={handleThemeChange}
               >
-                <SegmentedControlOption>Dark</SegmentedControlOption>
+                <SegmentedControlOption>Dark theme</SegmentedControlOption>
+                <SegmentedControlOption>Light theme</SegmentedControlOption>
               </SegmentedControl>
             </ProjectTextRow>
             <ProjectTextRow>
@@ -183,7 +188,7 @@ export const SmartSparrow = () => {
           <ProjectSectionContent>
             <Image
               raised
-              key="lesson-builder"
+              key={theme}
               srcSet={
                 isDark
                   ? `${imageSprDesignSystemDark} 1280w, ${imageSprDesignSystemDarkLarge} 2560w`
@@ -210,7 +215,7 @@ export const SmartSparrow = () => {
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
-        <div>
+        <ThemeProvider theme="dark" data-invert>
           <ProjectSection
             backgroundOverlayOpacity={0.5}
             backgroundElement={
@@ -248,7 +253,7 @@ export const SmartSparrow = () => {
               />
             </ProjectSectionColumns>
           </ProjectSection>
-        </div>
+        </ThemeProvider>
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
@@ -263,7 +268,7 @@ export const SmartSparrow = () => {
             </ProjectTextRow>
             <Image
               raised
-              key="lesson-builder"
+              key={theme}
               srcSet={
                 isDark
                   ? `${imageSprStoryboarderDark} 1280w, ${imageSprStoryboarderDarkLarge} 2560w`
@@ -335,7 +340,7 @@ export const SmartSparrow = () => {
             </div>
           </ProjectSectionColumns>
         </ProjectSection>
-        <div>
+        <ThemeProvider theme="dark" data-invert>
           <Suspense>
             <Earth
               className={styles.earth}
@@ -515,7 +520,7 @@ export const SmartSparrow = () => {
               />
             </Earth>
           </Suspense>
-        </div>
+        </ThemeProvider>
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow center centerMobile noMargin>
