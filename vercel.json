@@ -1,1 +1,25 @@
-{"framework":"remix","buildCommand":"npm run build","devCommand":"npm run dev","outputDirectory":"build/client"}
+{
+  "framework": "remix",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "outputDirectory": "build/client",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@remix-run/vercel",
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/build/(.*)",
+      "dest": "/build/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
