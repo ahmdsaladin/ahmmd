@@ -1,6 +1,6 @@
 import { baseMeta } from '~/utils/meta';
 import { getPosts } from './posts.server';
-import { json } from '@remix-run/node';
+import { json } from '@remix-run/cloudflare';
 
 export async function loader() {
   const allPosts = await getPosts();

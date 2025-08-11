@@ -1,7 +1,4 @@
-import {
-  vitePlugin as remix,
-  cloudflareDevProxyVitePlugin as remixCloudflareDevProxy,
-} from '@remix-run/dev';
+import { vitePlugin as remix } from '@remix-run/dev';
 import { defineConfig } from 'vite';
 import jsconfigPaths from 'vite-jsconfig-paths';
 import mdx from '@mdx-js/rollup';
@@ -25,8 +22,10 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       providerImportSource: '@mdx-js/react',
     }),
-    remixCloudflareDevProxy(),
     remix({
+      ssr: true,
+      serverBuildPath: 'build/worker.js',
+      buildDirectory: 'build',
       routes(defineRoutes) {
         return defineRoutes(route => {
           route('/', 'routes/home/route.js', { index: true });
@@ -35,4 +34,7 @@ export default defineConfig({
     }),
     jsconfigPaths(),
   ],
+  ssr: {
+    noExternal: ['@aws-sdk/client-ses'],
+  },
 });

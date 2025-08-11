@@ -1,4 +1,4 @@
-import { json, createCookieSessionStorage } from '@remix-run/node';
+import { json, createCookieSessionStorage } from '@remix-run/cloudflare';
 
 export async function action({ request, context }) {
   const formData = await request.formData();
