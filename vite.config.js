@@ -12,11 +12,11 @@ export default defineConfig({
   assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
   build: {
     assetsInlineLimit: 1024,
+    chunkSizeWarningLimit: 1000, // Increase chunk size warning limit
     rollupOptions: {
+      // Disable code splitting for Cloudflare Pages
       output: {
-        manualChunks: {
-          'aws-sdk': ['@aws-sdk/client-ses', '@aws-sdk/core']
-        }
+        inlineDynamicImports: false,
       }
     },
   },
@@ -38,10 +38,13 @@ export default defineConfig({
           route('/', 'routes/home/route.js', { index: true });
         });
       },
+      // Disable code splitting for Cloudflare Pages
+      serverModuleFormat: 'cjs',
     }),
     jsconfigPaths(),
   ],
   ssr: {
+    // Mark AWS SDK as external to prevent bundling issues
     noExternal: ['@aws-sdk/client-ses', '@aws-sdk/core'],
     target: 'webworker',
   },

@@ -9,8 +9,16 @@ command = "npm run build"
 format = "modules"
 main = "build/worker.js"
 
-# Bundle settings to properly handle AWS SDK
+# Bundle settings for Cloudflare Pages
 [build.upload.rules]
 [[build.upload.rules]]
 type = "ESModule"
 glob = "**/*.js"
+
+# Disable minification as it's handled by Vite
+[build]
+minify = false
+
+# Environment variables (these should be set in Cloudflare Pages dashboard)
+[vars]
+NODE_ENV = "production"
