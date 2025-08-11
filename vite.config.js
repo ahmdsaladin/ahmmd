@@ -14,10 +14,13 @@ export default defineConfig({
     assetsInlineLimit: 1024,
     chunkSizeWarningLimit: 1000, // Increase chunk size warning limit
     rollupOptions: {
-      // Disable code splitting for Cloudflare Pages
       output: {
+        // Disable code splitting for Cloudflare Pages
+        manualChunks: undefined,
         inlineDynamicImports: false,
-      }
+      },
+      // Exclude AWS SDK from being processed by Rollup
+      external: ['@aws-sdk/client-ses', '@aws-sdk/core']
     },
   },
   server: {
@@ -38,13 +41,15 @@ export default defineConfig({
           route('/', 'routes/home/route.js', { index: true });
         });
       },
-      // Disable code splitting for Cloudflare Pages
+      // Use CJS for better compatibility with Cloudflare Workers
       serverModuleFormat: 'cjs',
+      // Disable server-side rendering for now to isolate the issue
+      // ssr: false,
     }),
     jsconfigPaths(),
   ],
   ssr: {
-    // Mark AWS SDK as external to prevent bundling issues
+    // Don't process these packages - they'll be available in the Cloudflare Workers environment
     noExternal: ['@aws-sdk/client-ses', '@aws-sdk/core'],
     target: 'webworker',
   },
