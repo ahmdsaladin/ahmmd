@@ -4,12 +4,6 @@
   "devCommand": "npm run dev",
   "outputDirectory": "build/client",
   "regions": ["iad1"],
-  "functions": {
-    "**/*.ts": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
   "routes": [
     {
       "src": "/build/(.*)",
