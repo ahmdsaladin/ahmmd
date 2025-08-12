@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/remix",
+      "use": "@vercel/remix@2.2.4",
       "config": {
         "maxLambdaSize": "15mb"
       }
