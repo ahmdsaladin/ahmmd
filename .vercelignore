@@ -1,0 +1,24 @@
+# Ignore everything
+*.*
+
+# Except these files and directories
+!**/*
+!**/.*
+
+# But ignore these specific files and directories
+.git
+.gitignore
+.vercel
+node_modules
+*.log
+*.md
+*.mdx
+.editorconfig
+.eslintrc*
+.prettierrc*
+.vscode
+.idea
+coverage
+storybook-static
+public/draco
+*.local

@@ -1,14 +1,3 @@
-name = "ahmmd"
-compatibility_date = "2023-10-30"
-compatibility_flags = ["nodejs_compat"]
-
-[build]
-command = "npm run build"
-
-[build.upload]
-format = "modules"
-main = "build/worker.js"
-
-# Environment variables (set these in Cloudflare Pages dashboard)
-[vars]
-NODE_ENV = "production"
+kv_namespaces = [
+  { id = "MY_KV", binding="MY_KV" }
+]

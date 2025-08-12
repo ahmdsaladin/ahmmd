@@ -1,9 +1,12 @@
-// This file ensures proper handling of AWS SDK side effects
-import '@aws-sdk/core';
-import '@aws-sdk/client-ses';
+const { createRequestHandler } = require('@remix-run/vercel');
+const { installGlobals } = require('@remix-run/node');
 
-// Export a default function as a no-op
-export default function noop() {}
+installGlobals();
 
-// This file is intentionally left mostly empty as its purpose is to ensure
-// the AWS SDK modules are properly included in the bundle with their side effects
+// Import the server build that was created by `remix build`
+const serverBuild = require('./build');
+
+module.exports = createRequestHandler({
+  build: serverBuild,
+  mode: process.env.NODE_ENV,
+});
