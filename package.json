@@ -1,0 +1,13 @@
+{
+  "name": "ahmmd-portfolio",
+  "version": "1.0.0",
+  "description": "Static HTML portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "echo 'Static site - no server required'"
+  },
+  "author": "Ahmad Saladin",
+  "license": "MIT",
+  "type": "module"
+}
