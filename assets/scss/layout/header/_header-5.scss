@@ -1,0 +1,111 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.5 Header Style 5
+/*----------------------------------------*/
+
+.tp-header-5{
+    &-wrapper{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 280px;
+        height: 100%;
+        z-index: 99;
+        padding: 50px 60px;
+        background-color: var(--tp-common-black);
+    }
+    &-logo{
+        padding-bottom: 115px;
+    }
+    &-menu{
+        margin-bottom: 220px;
+        & nav{
+            & ul{
+                & li{
+                    list-style-type: none;
+                    line-height: 0;
+                    padding: 15px 0;
+                    &:last-child{
+                        padding-bottom: 0;
+                    }
+                    & a{
+                        font-size: 17px;
+                        font-weight: 600;
+                        line-height: 1;
+                        letter-spacing: 0.34px;
+                        color: var(--tp-common-white);
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+    &-search{
+        &-box{
+            margin-bottom: 55px;
+        }
+        &-input{
+            & input{
+                background-color: transparent;
+                border: none;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: 0.3px;
+                color: var(--tp-common-white);
+                border-bottom: 1px solid rgba(245, 247, 245, 0.10);
+                padding: 0;
+                padding-right: 30px;
+                &:focus{
+                    border-color: var(--tp-common-white);
+                }
+                @include placeholder{
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: 0.3px;
+                    color: rgba(255, 255, 255, 0.50);
+                    text-transform: capitalize;
+                }
+            }
+            & button{
+                position: absolute;
+                top: 14px;
+                right: 0;
+            }
+        }
+    }
+    &-cart{
+        display: inline-block;
+        & a{
+            height: 54px;
+            width: 54px;
+            line-height: 49px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.10);
+            & span{
+                height: 18px;
+                width: 18px;
+                line-height: 18px;
+                border-radius: 50%;
+                text-align: center;
+                display: inline-block;
+                color: var(--tp-common-black);
+                background-color: var(--tp-common-white);
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+        &-price{
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.36px;
+            color: var(--tp-common-white);
+            margin-left: 10px;
+        }
+    }
+}

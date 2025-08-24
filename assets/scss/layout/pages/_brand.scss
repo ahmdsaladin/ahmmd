@@ -1,0 +1,134 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.3 brand css start
+/*----------------------------------------*/
+
+.brand-wrapper{
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+
+.tp-brand{
+    &-area{
+        padding-top: 600px;
+        @media #{$xl}{
+            padding-top: 450px;
+        }
+        @media #{$lg}{
+            padding-top: 640px;
+        }
+        @media #{$xs}{
+            padding-top: 0;
+        }
+    }
+    &-ptb{
+        padding-top: 85px;
+    }
+    &-brd-top{
+        border-top: 1px solid var(--tp-border-1);
+    }
+    &-title{
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 1; 
+        text-transform: uppercase;
+        color: var(--tp-common-black);
+        margin-bottom: 0;
+        @media #{$xxl}{
+            font-size: 14px;
+        }
+        @media #{$md,$xs}{
+            margin-bottom: 40px;
+        }
+    }
+    &-item{
+        text-align: center;
+        @media #{$md,$xs}{
+            text-align: center;
+        }
+    }
+    &-slider-active{
+        & .swiper-wrapper {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.tp-brand-3{
+    &-slider-active{
+        & .swiper-wrapper {
+            display: flex;
+            align-items: center;
+        } 
+        & .tp-brand-item {
+            text-align: center;
+        }
+    }
+}
+
+.tp-brand-4{
+    &-area{
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        z-index: 9999;
+        margin-bottom: -3px;
+        @media #{$md,$xs}{
+            padding-top: 0;
+        }
+    }
+    &-item{
+        border: 1px solid rgba(25, 25, 26, 0.10);
+        text-align: center;
+        margin: -1px 0 0 -1px;
+        padding:60px 30px;
+        height: 150px;
+        overflow: hidden;
+        & img{
+            transition: .3s;
+        }
+        &:hover{
+            & .tp-brand-4-line-text{
+                opacity: 1;
+                visibility: visible;
+            }
+            & img{
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+    &-line-text{
+        position: absolute;
+        top: 42%;
+        transform: translateY(-50%);
+        animation: scrollText-2 25s infinite linear;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        & span{
+            font-size: 20px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--tp-common-black);
+            font-family: var(--tp-ff-marcellus);
+            white-space: nowrap;
+            margin: 0px 15px;
+        }
+    }
+}
+
+.bd-brand{
+    &-item{
+        @media #{$xs}{
+            margin-bottom: 20px;
+        }
+        & img{
+            width: 100%;
+        }
+    }
+}
+

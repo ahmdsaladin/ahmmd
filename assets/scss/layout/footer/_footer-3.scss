@@ -1,0 +1,170 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.3 Footer Style 3
+/*----------------------------------------*/
+
+.tp-footer-3{
+    &-logo{
+        & img{
+            height: 100%;
+            width: 85px;
+        }
+    }
+    &-title{
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.3px;
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-marcellus);
+        margin-bottom: 30px;
+    }
+    &-menu{
+        & ul{
+            display: inline-block;
+            & li{
+                list-style-type: none;
+                width: 50%;
+                float: left;
+                margin-bottom: 10px;
+                & a{
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 1;
+                    color: rgba(255, 255, 255, 0.80);
+                    background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+                    display: inline;
+                    background-size: 0% 1px, 0 1px;
+                    background-position: 100% 100%, 0 100%;
+                    background-repeat: no-repeat;
+                    transition: background-size 0.3s linear;
+                    &:hover{
+                        background-size: 0% 1px, 100% 1px; 
+                        color: var(--tp-common-white);
+                    }
+                }
+            }
+        }
+    }
+    &-btn{
+        & .icon-1{
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            z-index: 2;
+        }
+        &:hover{
+            & .icon-2{
+                & svg{
+                    animation: rotate2 10s linear infinite;
+                }
+            }
+        }
+    }
+    &-input-box{
+        & input{
+            background-color: transparent;
+            margin-right: 10px;
+            border-radius: 30px;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--tp-common-white);
+            &:focus{
+                border-color: var(--tp-common-white);
+            }
+            @include placeholder{
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--tp-common-white);
+            }
+        }
+    }
+    &-logo{
+        margin-bottom: 105px;
+        display: inline-block;
+    }
+    &-bg-text{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &-logo-box{
+        & p{
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+            color: rgba(255, 255, 255, 0.80);
+        }
+    }
+    &-copyright{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 12px;
+        color: rgba(255, 255, 255, 0.60);
+    }
+    &-social{
+        & a{
+            height: 44px;
+            width: 44px;
+            border-radius: 50%;
+            line-height: 44px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 6px;
+            color: var(--tp-common-white);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: .3s;
+            &:hover{
+                background-color: var(--tp-common-white);
+                border-color: var(--tp-common-white);
+                color: var(--tp-common-black);
+            }
+        }
+    }
+}
+
+.footer-col{
+    &-3-1{
+        padding-right: 53px;
+        @media #{$lg,$md,$xs}{
+            padding-right: 0;
+        }
+    }
+    &-3-2{
+        padding-left: 80px;
+        margin-left: 33px;
+        border-left: 1px solid rgba(255, 255, 255, 0.10);
+        @media #{$xl}{
+            padding-left: 30px;
+            margin-left: 0;
+        }
+        @media #{$lg,$md,$xs}{
+            padding-left: 0;
+            margin-left: 0;
+            border-left: 0;
+        }
+    }
+    &-3-3{
+        padding-left: 130px;
+        margin-left: 33px;
+        border-left: 1px solid rgba(255, 255, 255, 0.10);
+        @media #{$xl}{
+            margin-left: 0;
+            padding-left: 80px;
+        }
+        @media #{$lg,$md,$xs}{
+            padding-left: 0;
+            margin-left: 0;
+            border-left: 0;
+        }
+    }
+}
+
+.tp-reveal-line {
+	overflow: hidden;
+    padding-bottom: 18px;
+}

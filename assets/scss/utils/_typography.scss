@@ -1,0 +1,37 @@
+// font url
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&family=Marcellus&family=Syne:wght@400;500;600;700;800&family=Aladin&display=swap';
+
+@font-face {
+    font-family: 'gallery_modernregular';
+    src: url('../fonts/gallerymodern-webfont.woff2') format('woff2'),
+    url('../fonts/gallerymodern-webfont.woff') format('woff'),
+    url('../fonts/gallerymodern-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// font family
+$font-family: (
+    'ff': (
+        'body': "'Syne', sans-serif",
+        'heading': "'Syne', sans-serif",
+        'p': "'Syne', sans-serif",
+        'syne': "'Syne', sans-serif",
+        'gallery': "'gallery_modernregular', sans-serif",
+        'shoulders': "'Big Shoulders Display', cursive",
+        'marcellus': "'Marcellus', sans-serif",
+        'aladin': "'Aladin', system-ui",
+        'fontawesome': '"Font Awesome 6 Pro"',
+    )
+);
+
+// font size
+$font-size: (
+    'fz': (
+        'body': 14px,
+        'p': 16px,
+    )
+);
+
+

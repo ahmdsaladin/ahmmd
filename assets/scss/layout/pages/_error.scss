@@ -1,0 +1,33 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.8 error css start
+/*----------------------------------------*/
+.tp-error{
+    &-title{
+        font-weight: 700;
+        font-size: 64px;
+        margin-bottom: 50px;
+        color: var(--tp-common-black);
+    }
+    &-title-sm{
+        font-weight: 600;
+        font-size: 26px;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: var(--tp-common-black);
+    }
+    &-content{
+        & p{
+            font-weight: 400;
+            font-size: 18px;
+            color: #57575a;
+            margin-bottom: 30px;
+        }
+    }
+    &-wrapper{
+        & img{
+            margin-bottom: 55px;
+        }
+    }
+}

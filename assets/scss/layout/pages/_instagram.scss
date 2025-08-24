@@ -1,0 +1,171 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.12 instagram css start
+/*----------------------------------------*/
+
+.footer-top{
+    margin-top: 400px;
+    @media #{$lg,$md}{
+        margin-top: 170px;
+    }
+    @media #{$md}{
+        margin-top: 0px;
+    }
+    @media #{$xs}{
+        margin-top: 100px;
+    }
+}
+
+.tp-instagram{
+    &-area{
+        height: 100vh;
+        @media #{$xs}{
+            height: 100%;
+        }
+    }
+    &-thumb{
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        & img{
+            height: 100%;   
+            width: 100%;
+            object-fit: cover;
+            background-position: center;
+            background-size: cover;
+            margin: 0 auto;
+        }
+        &-wrap{
+            display: inline-block;
+            margin: 0 auto;
+        }
+        &-inner{
+            &-1{
+                position: absolute;
+                top: -41%;
+                left: 50px;
+                & img{
+                    border-radius: 10px;
+                }
+            }
+            &-2{
+                position: absolute;
+                top: -41%;
+                right: 0px;
+                & img{
+                    border-radius: 10px;
+                }
+            }
+            &-3{
+                position: absolute;
+                bottom: 0;
+                right: -74%;
+                & img{
+                    border-radius: 10px;
+                }
+            }
+            &-4{
+                position: absolute;
+                bottom: -42%;
+                right: -42%;
+                & img{
+                    border-radius: 10px;
+                }
+            }
+            &-5{
+                position: absolute;
+                bottom: -26%;
+                right: 0%;
+                & img{
+                    border-radius: 10px;
+                }
+            }
+            &-6{
+                position: absolute;
+                bottom: 0%;
+                left: -25%;
+                & img{
+                    border-radius: 10px;
+                }
+            }
+            &-7{
+                position: absolute;
+                bottom: 25%;
+                left: -59%;
+                & img{
+                    border-radius: 10px;
+                }
+            }
+            &-8{
+                position: absolute;
+                top: 7%;
+                right: -25%;
+                & a{
+                    height: 96px;
+                    width: 96px;
+                    font-size: 24px;
+                    line-height: 96px;
+                    border-radius: 50%;
+                    text-align: center;
+                    display: inline-block;
+                    color: var(--tp-common-white);
+                    background-color: var(--tp-common-black);
+                }
+            }
+        }
+    }
+    &-subtitle{
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1;
+        text-transform: uppercase;
+        color: var(--tp-common-black);
+    }
+    &-title{
+        font-size: 80px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -2.4px;
+        color: var(--tp-common-black);
+        margin-bottom: 30px;
+        @media #{$xs}{
+            font-size: 50px;
+        }
+    }
+    &-content-wrap{
+        position: absolute;
+        bottom: -340px;
+        left: -150px;
+        @media #{$lg,$md}{
+            left: 60px;
+        }
+        @media #{$xs}{
+            position: static;
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+    }
+    &-content{
+        padding-left: 100px;
+        & p{
+            color: #5D5D63;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+        }
+    }
+}
+
+
+
+.tp_text_invert > div {
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 50%);
+}

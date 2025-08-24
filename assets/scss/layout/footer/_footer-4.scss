@@ -1,0 +1,54 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Footer Style 4
+/*----------------------------------------*/
+.tp-footer-4{
+    &-big-title{
+        font-size: 149px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -4.5px;
+        text-transform: uppercase;
+        font-family: var(--tp-ff-marcellus);
+        color: var(--tp-common-white);
+        margin-bottom: 70px;
+        @media #{$xxxl}{
+            font-size: 125px;
+        }
+        @media #{$xxl}{
+            font-size: 108px;
+        }
+        @media #{$xl}{
+            font-size: 92px;
+        }
+        @media #{$lg}{
+            font-size: 75px;
+        }
+        @media #{$md}{
+            font-size: 101px;
+        }
+        @media #{$xs}{
+            font-size: 50px;
+        }
+        & span{
+            display: inline-block;
+            line-height: 0;
+            transform: translateX(20px);
+        }
+
+    }
+    &-top{
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+        &-left{
+            & p{
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 32px;
+                color: var(--tp-common-white);
+                font-family: var(--tp-ff-marcellus);
+            }
+        }
+    }
+}

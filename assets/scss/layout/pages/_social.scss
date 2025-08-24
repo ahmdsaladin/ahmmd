@@ -1,0 +1,47 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.21 social css start
+/*----------------------------------------*/
+
+.tp-social-6{
+    &-item{
+        & a{
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 12px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.60);
+            border-radius: 100px;
+            background: #242427;
+            display: inline-block;
+            padding: 25px 45px;
+            transition: .3s;
+            & i{
+                padding-right: 17px;
+                margin-right: 17px;
+                position: relative;
+                &::after{
+                    position: absolute;
+                    top: -8px;
+                    right: 0;
+                    width: 1px;
+                    height: 30px;
+                    border-radius: 100px;
+                    background: rgba(255, 255, 255, 0.10);
+                    content: '';
+                    transition: .3s;
+                }
+            }
+            &:hover{
+                background-color: var(--tp-common-orange);
+                color: var(--tp-common-white);
+                & i{
+                    &::after{
+                        background: rgba(255, 255, 255, 0.20);
+                    }
+                }
+            }
+        }
+    }
+}

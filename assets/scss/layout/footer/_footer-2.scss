@@ -1,0 +1,229 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.2 Footer Style 2
+/*----------------------------------------*/
+
+.tp-footer-2{
+    &-widget{
+        &-logo{
+            margin-bottom: 30px;
+        }
+        &-text{
+            & p{
+                color: rgba(255, 255, 255, 0.80);
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 26px;
+                margin-bottom: 0;
+            }
+        }
+        &-title{
+            color: var(--tp-common-white);
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -0.26px;
+            margin-bottom: 30px;
+        }
+        &-menu{
+            & ul{
+                & li{
+                    list-style-type: none;
+                    margin-bottom: 7px;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                    & a{
+                        color: rgba(255, 255, 255, 0.80);
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 1;
+                        background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+                        display: inline;
+                        background-size: 0% 1px, 0 1px;
+                        background-position: 100% 100%, 0 100%;
+                        background-repeat: no-repeat;
+                        transition: 0.3s linear;
+                        &:hover{
+                           background-size: 0% 1px, 100% 1px;
+                           color: var(--tp-common-white); 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-contact-item{
+        margin-bottom: 15px;
+        & span{
+            color: rgba(255, 255, 255, 0.70);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 4px;
+            &:hover{
+                & a{
+                    color: rgba(255, 255, 255, 0.90);
+                }
+            }
+        }
+    }
+    &-input{
+        & input{
+            background-color: transparent;
+            border: none;
+            height: 100%;
+            color: var(--tp-common-white);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 14px;
+            padding: 0;
+            padding-bottom: 20px;
+            padding-right: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            @include placeholder{
+                color: var(--tp-common-white);
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 14px;
+            }
+            &:focus{
+                border-color: var(--tp-common-white);
+            }
+        }
+        & button{
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+    }
+}
+.footer{
+    &-col-2-2{
+        padding-left: 35px;
+        @media #{$md}{
+            padding-left: 0;
+        }
+        @media #{$xs}{
+            padding-left: 0;
+        }
+    }
+    &-col-2-3{
+        padding-left: 60px;
+        padding-right: 55px;
+        @media #{$xl}{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @media #{$lg,$md}{
+            padding-left: 0px;
+        }
+        @media #{$xs}{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &-col-2-4{
+        padding-left: 70px;
+        @media #{$xl}{
+            padding-left: 30px;
+        }
+        @media #{$lg,$md,$xs}{
+            padding-left: 0px;
+        }
+    }
+}
+.tp-copyright-2{
+    &-left{
+        & p{
+            color: rgba(255, 255, 255, 0.60);
+            margin-bottom: 0;
+            @media #{$md}{
+                margin-bottom: 20px;
+            }
+            @media #{$xs}{
+                font-size: 17px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &-social{
+        & a{
+            height: 35px;
+            line-height: 35px;
+            padding: 0px 35px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: -0.14px;
+            display: inline-block;
+            text-transform: uppercase;
+            color: var(--tp-common-white);
+            border: 1.5px solid rgba(255, 255, 255, 0.20);
+            margin-left: 10px;
+            @media #{$lg}{
+                padding: 0px 30px;
+                margin-bottom: 0;
+            }
+            @media #{$xs}{
+                padding: 0px 20px;
+                font-size: 12px;
+            }
+            &:hover{
+                background-color: var(--tp-common-white);
+                border-color: var(--tp-common-white);
+                color: var(--tp-common-black);
+            }
+        }
+    }
+    &-bdr-top{
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+        padding: 35px 0;
+        padding-bottom: 25px;
+    }
+}
+.tp-footer-white{
+    & .tp-footer-2-widget-text p {
+        color: #5D5D63;
+    }
+    & .tp-footer-2-widget-title {
+        color: var(--tp-common-black-2);
+    }
+    & .tp-footer-2-widget-menu ul li a {
+        color: #5D5D63;
+        background-image: linear-gradient(#5D5D63, #5D5D63), linear-gradient(#5D5D63, #5D5D63);
+    }
+    & .tp-footer-2-contact-item span {
+        color: #5D5D63;
+    }
+    & .tp-footer-2-input input {
+        color: #5D5D63;
+        border-bottom: 1px solid #5D5D63;
+        @include placeholder{
+            color:#5D5D63;
+        }
+    }
+    & .tp-footer-2-contact-item span:hover a {
+        color: var(--tp-common-black-2);
+    }
+}
+.tp-copyright-white{
+    & .tp-copyright-2-left p {
+        color: #5D5D63;
+    }
+    & .tp-copyright-2-social a {
+        color: var(--tp-common-black);
+        border: 1.5px solid rgba(25, 25, 26, 0.20);
+        &:hover{
+            background-color: var(--tp-common-black-2);
+            color: var(--tp-common-white);
+            border-color: var(--tp-common-black-2);
+        }
+    }
+    &.tp-copyright-2-bdr-top {
+        border-top: 1px solid rgba(25, 25, 26, 0.20);
+    }
+}

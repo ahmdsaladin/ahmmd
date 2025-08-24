@@ -1,0 +1,87 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.10 gallery css start
+/*----------------------------------------*/
+
+.tp-gallery{
+    &-slider-active{
+        margin: 0px -15px;
+    }
+    &-shape{
+        &-1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            @media #{$xs}{
+                top: -6px;
+            }
+            @media #{$sm}{
+                top: 0px;
+            }
+            & .img-2{
+                display: none;
+            }
+        }
+        &-2{
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            z-index: 2;
+            @media #{$xs}{
+                bottom: -6px;
+            }
+            @media #{$sm}{
+                bottom: -1px;
+            }
+            & .img-2{
+                display: none;
+            }
+        }
+    }
+    &-titming{
+        -webkit-transition-timing-function: linear;
+        transition-timing-function: linear;
+    }
+}
+.tp-gallery-6{
+    &-tab-btn{
+        & button{
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.50);
+            margin: 0 25px;
+            @media #{$md}{
+                margin: 0 15px;
+            }
+            @media #{$xs}{
+                font-size: 14px;
+                margin: 0 10px;
+            }
+            &:hover{
+                color: var(--tp-common-orange);
+            }
+            &.active{
+                color: var(--tp-common-orange);
+            }
+        }
+    }
+    &-thumb{
+        & img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+.tp-gallery-6-item .tp-hover-wrapper {
+    background-color: var(--tp-theme-1);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 45px 75px;
+}
+.tp-gallery-6-item .tp-img-reveal-wrapper {
+    width: auto;
+    height: auto;
+}

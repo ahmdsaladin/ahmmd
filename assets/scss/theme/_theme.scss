@@ -1,0 +1,516 @@
+@use '../utils' as *;
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Liko - Creative Agency & Portfolio HTML Template
+    Author: Theme_Pure
+    Support: https://help.themepure.net/
+    Description: Liko - Creative Agency & Portfolio HTML Template
+    Version: 1.1
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+	-----------------
+    01. THEME CSS
+	-----------------
+		1.1 Theme Default
+		1.2 Common Classes
+		1.3 Default Spacing
+		
+	-----------------
+    02. COMPONENTS css
+	-----------------
+		2.1 Back to top
+		2.2 Theme Settings
+		2.3 Buttons
+		2.4 Animations
+		2.5 Preloader
+		2.6 Background 
+		2.7 Carousel
+		2.8 Nice Select
+		2.9 Pagination
+		2.10 Offcanvas
+		2.11 Breadcrumb
+		2.12 Accordion
+		2.13 Tab
+		2.14 Modal
+		2.15 Section Title
+		2.16 Search
+		2.17 Hotspot
+		2.18 Ragne Slider
+
+	-----------------
+    03. HEADER CSS
+	-----------------
+		3.1 Header Style 1
+		3.2 Header Style 2
+		3.3 Header Style 3
+		3.4 Header Style 4
+		3.5 Header Style 5
+		3.6 Header Style 6
+		3.7 Header Style 7
+		3.9 Header Style 9
+		3.10 Header Style 10
+		3.11 Header Style 10
+
+
+    ---------------------------------
+	04. MENU CSS
+	---------------------------------
+		4.1 Main menu css
+
+	---------------------------------
+	05. BLOG CSS
+	---------------------------------
+	    5.1 blog css start
+		5.2 Postbox css
+		5.3 Recent Post css
+		5.4 Sidebar css
+
+	---------------------------------
+	06. FOOTER CSS
+	---------------------------------
+		6.1 Footer Style 1
+		6.2 Footer Style 2
+		6.3 Footer Style 3
+		6.4 Footer Style 4
+		6.5 Footer Style 5
+		6.6 Footer Style 6
+
+	
+	---------------------------------
+	07. PAGES CSS
+	---------------------------------
+		7.1 about css start 
+		7.2 award css start 
+		7.3 brand css start
+		7.4 cart css start 
+		7.5 checkout css start
+		7.6 contact css start 
+		7.7 cta css start 
+		7.8 error css start 
+		7.9 funfact css start
+		7.10 gallery css start 
+		7.11 Hero css start 
+		7.12 instagram css start 
+		7.13 liko-dark css start 
+		7.14 Login CSS 
+		7.15 order css start 
+		7.16 price css start 
+		7.17 Profile CSS 
+		7.18 project css start
+		7.19 service css start
+		7.20 shop css start 
+		7.21 social css start 
+		7.22 team css start 
+		7.23 testimonial css start 
+		7.24 tp custom css 
+		7.25 video css start
+
+
+
+**********************************************/
+
+
+/*----------------------------------------*/
+/*  1.1 Theme Default
+/*----------------------------------------*/
+
+@media (min-width: 1400px) {
+	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+		max-width: 1200px;
+	}
+	.container-1630{
+		max-width: 1630px;
+	}
+	.container-1400{
+		max-width: 1400px;
+	}
+	.container-1480{
+		max-width: 1480px;
+	}
+	.container-1740{
+		max-width: 1740px;
+	}
+	.container-1770{
+		max-width: 1770px;
+	}
+	.container-1330{
+		max-width: 1330px;
+	}
+	.container-1380{
+		max-width: 1380px;
+	}
+	.container-1800{
+		max-width: 1800px;
+	}
+	.container-1300{
+		max-width: 1300px;
+	}
+	.container-1720{
+		max-width: 1720px;
+	}
+	.container-1480{
+		max-width: 1480px;
+	}
+	.container-1430{
+		max-width: 1430px;
+	}
+	.container-1870{
+		max-width: 1870px;
+	}
+	.container-1775{
+		max-width: 1775px;
+	}
+	.container-1840{
+		max-width: 1840px;
+	}
+	.container-1650{
+		max-width: 1650px;
+	}
+	.container-1560{
+		max-width: 1560px;
+	}
+	.container-1500{
+		max-width: 1500px;
+	}
+	.container-1530{
+		max-width: 1530px;
+	}
+	.container-1550{
+		max-width: 1550px;
+	}
+}
+
+.container-1685{
+	max-width: 1685px;
+	@media only screen and (min-width: 1400px) and (max-width: 1920px){
+		padding: 0px 100px;
+	}
+}
+
+@import url($font-url);
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*---------------------------------
+	typography css start 
+---------------------------------*/
+body {
+	font-family: var(--tp-ff-body);
+	font-size: 14px;
+	font-weight: normal;
+	color: var(--tp-text-body);
+	line-height: 26px;
+}
+
+a{
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--tp-ff-heading);
+	color: var(--tp-common-black);
+	margin-top: 0px;
+	font-weight: 500;
+	line-height: 1.2;
+	@include transition(color);
+}
+
+h1 {
+	font-size: 40px;
+}
+  
+h2 {
+font-size: 36px;
+}
+
+h3 {
+font-size: 28px;
+}
+
+h4 {
+font-size: 24px;
+}
+
+h5 {
+font-size: 20px;
+}
+
+h6 {
+font-size: 16px;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.table {
+	--bs-table-bg: unset;
+}
+
+p {
+	font-family: var(--tp-ff-p);
+	color: var(--tp-text-body);
+	margin-bottom: 15px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+}
+
+img {
+	max-width: 100%;
+}
+
+a,
+button,
+p,
+input,
+select,
+textarea,
+li,
+.transition-3{
+	@extend %transition;
+}
+
+a:not([href]):not([class]), 
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+a:focus,
+a:hover{
+	color: inherit;
+	text-decoration: none;
+}
+
+a,
+button {
+	color: inherit;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+button:focus{
+    outline: 0; 
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+textarea{
+	outline: none;
+	background-color: #fff;
+	height: 56px;
+	width: 100%;
+	line-height: 56px;
+	font-size: 14px;
+	color: var(--tp-common-black);
+	padding-left: 26px;
+	padding-right: 26px;
+	border: 1px solid #E0E2E3;
+
+	@include placeholder{
+		color: #95999D;
+	}
+	@include rtl{
+		text-align: right;
+	}
+
+	&:focus{
+		border-color: var(--tp-common-black);
+		&::placeholder{
+			opacity: 0;
+		}
+	}
+
+}
+
+textarea{
+	line-height: 1.4;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	&:focus{
+		border-color: var(--tp-common-black);
+		&::placeholder{
+			opacity: 0;
+		}
+	}
+}
+
+input[type="color"] {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	border-radius: 50%;
+}
+
+*::-moz-selection {
+	background: var(--tp-common-black);
+	color: var(--tp-common-white);
+	text-shadow: none;
+}
+::-moz-selection {
+	background: var(--tp-common-black);
+	color: var(--tp-common-white);
+	text-shadow: none;
+}
+::selection {
+	background: var(--tp-common-black);
+	color: var(--tp-common-white);
+	text-shadow: none;
+}
+
+*::-moz-placeholder {
+	color: var(--tp-common-black);
+	font-size: 14px;
+	opacity: 1;
+}
+*::placeholder {
+	color: var(--tp-common-black);
+	font-size: 14px;
+	opacity: 1;
+}
+
+
+.z-index{
+	position: relative;
+	z-index: 1;
+}
+.z-index-2{
+	position: relative;
+	z-index: 2;
+}
+.z-index-3{
+	position: relative;
+	z-index: 3;
+}
+.z-index-4{
+	position: relative;
+	z-index: 4;
+}
+.z-index-5{
+	position: relative;
+	z-index: 5;
+}
+.z-index-6{
+	position: relative;
+	z-index: 6;
+}
+.z-index-7{
+	position: relative;
+	z-index: 7;
+}
+.z-index-8{
+	position: relative;
+	z-index: 8;
+}
+.z-index-9{
+	position: relative;
+	z-index: 9;
+}
+
+
+.gx-5{
+	--bs-gutter-x: 5px;
+}
+.gx-10{
+	--bs-gutter-x: 10px;
+}
+.gx-15{
+	--bs-gutter-x: 15px;
+}
+.gx-20{
+	--bs-gutter-x: 20px;
+}
+.gx-25{
+	--bs-gutter-x: 25px;
+}
+.gx-30{
+	--bs-gutter-x: 30px;
+}
+.gx-35{
+	--bs-gutter-x: 35px;
+}
+.gx-40{
+	--bs-gutter-x: 40px;
+}
+.gx-45{
+	--bs-gutter-x: 45px;
+}
+.gx-50{
+	--bs-gutter-x: 50px;
+	@media #{$xxl}{
+		--bs-gutter-x: 30px;
+	}
+}
+.gx-60{
+	--bs-gutter-x: 60px;
+}
+.gx-75{
+	--bs-gutter-x: 75px;
+}
+.gx-80{
+	--bs-gutter-x: 80px;
+}
+.gx-140{
+	--bs-gutter-x: 140px;
+	@media #{$md}{
+		--bs-gutter-x: 40px;
+	}
+}
+.gx-90{
+	--bs-gutter-x: 90px;
+	@media #{$xxl}{
+		--bs-gutter-x: 50px;		
+	}
+	@media #{$xl}{
+		--bs-gutter-x: 30px;		
+	}
+	@media #{$lg,$md}{
+		--bs-gutter-x: 50px;		
+	}
+}
+
+

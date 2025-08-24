@@ -1,0 +1,123 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.3 Header Style 3
+/*----------------------------------------*/
+
+.tp-header-3{
+    &-area{
+        &.header-sticky{
+            &::after{
+                backdrop-filter: initial;
+            }
+            box-shadow: none;
+            background: none;
+            & .tp-header-3-logo{
+                display: none;
+            }
+            & .tp-header-3-right{
+                display: none !important;
+            }
+        }
+    }
+    &-menu-box{
+        display: inline-block;
+        padding: 0px 15px;
+        padding-right: 30px;
+        @at-root{
+            .menu-bg{
+                position: absolute;
+                top: 0;
+                display: inline-block;
+                backdrop-filter: blur(8px);
+                background: rgba(46, 46, 46, 0.9); 
+                border-radius: 100px;
+                z-index: -1;
+            }
+        }
+    }
+    &-bar{
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        text-align: center;
+        display: inline-block;
+        color: var(--tp-common-black);
+        border: 1px solid var(--tp-common-black);
+        transition: .3s;
+        margin-left: 15px;
+        border-radius: 50%;
+        &:hover{
+            background-color: var(--tp-common-black);
+            color: var(--tp-common-white);
+        }
+    }
+    &-menu{
+        & > nav{
+            & > ul{
+                & > li{
+                    list-style: none;
+                    display: inline-block;
+                    margin: 0px 15px;
+                    & > a{
+                        font-size: 17px;
+                        font-weight: 500;
+                        padding: 12px 0;
+                        transition: .3s;
+                        display: inline-block;
+                        color: var(--tp-common-white);
+                        & span{
+                            margin-left: 5px;
+                        }
+                    }
+                    &:hover{
+                        color: var(--tp-common-white);
+                    }
+                }
+            }
+        }
+    }
+    &-cart{
+        & button{
+            & span{
+                margin-left: 7px;
+                display: inline-block;
+            }
+            & em{
+                position: absolute;
+                right: -12px;
+                top: -1px;
+                color: var(--tp-common-black);
+                font-size: 18px;
+                font-weight: 400;
+                height: 18px;
+                width: 18px;
+                line-height: 16px;
+                border-radius: 50%;
+                text-align: center;
+                background-color: var(--tp-common-white);
+                font-style: normal;
+            }
+        }
+    }
+    &-social{
+        & a{
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            font-size: 16px;
+            text-align: center;
+            display: inline-block;
+            background-color: var(--tp-grey-2);
+            color: var(--tp-common-black);
+            margin-left: 5px;
+            transition: .3s;
+            &:hover{
+                background-color: var(--tp-common-black);
+                color: var(--tp-common-white);
+            }
+        }
+    }
+}

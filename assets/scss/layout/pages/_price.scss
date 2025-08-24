@@ -1,0 +1,107 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.16 price css start
+/*----------------------------------------*/
+
+.tp-price{
+    &-item{
+        border: 1px solid rgba(25, 25, 26, 0.24);
+        background: #FFF;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        &.active{
+            & .tp-price-monthly {
+                color: var(--tp-common-white);
+            } 
+            & .tp-price-list ul li {
+                color: var(--tp-common-white);
+            }
+            & .tp-price-list ul li i {
+                border: 1px solid var(--tp-common-white);
+            }
+        }
+    }
+    &-head{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 35px;
+        & span{
+            color: var(--tp-common-white);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        & h5{
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -2.16px;
+            text-transform: uppercase;
+            color: var(--tp-common-white);
+            margin-bottom: 0;
+        }
+    }
+    &-body{
+        padding: 35px 40px;
+    }
+    &-monthly{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: 40px;
+        display: inline-block;
+        color: var(--tp-common-black-2);
+        & i{
+            font-size: 60px;
+            font-weight: 700;
+            font-style: normal;
+        }
+    }
+    &-list{
+        margin-bottom: 30px;
+        & ul{
+            & li{
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1;
+                list-style-type: none;
+                position: relative;
+                color: var(--tp-common-black-2);
+                padding-left: 40px;
+                padding-bottom: 28px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                & i{
+                    position: absolute;
+                    top: -5px;
+                    left: 0;
+                    height: 28px;
+                    width: 28px;
+                    line-height: 28px;
+                    border-radius: 50%;
+                    text-align: center;
+                    font-size: 16px;
+                    border: 1px solid var(--tp-common-black-2);
+                }
+            }
+        }
+    }
+}
+.tp-price-inner-faq{
+    & .tp-service-2-shape-img {
+        padding-left: 0px;
+    }
+}
+.tp-price-inner-faq-wrap{
+    padding-left: 120px;
+    @media #{$lg}{
+        padding-left: 70px;
+    }
+    @media #{$md,$xs}{
+        padding-left: 0px;
+    }
+}

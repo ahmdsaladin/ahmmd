@@ -1,0 +1,71 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.11 Breadcrumb
+/*----------------------------------------*/
+
+.breadcrumb{
+    $self: &;
+    &__padding{
+        padding-left: 80px;
+        padding-right: 80px;
+
+        @media #{$lg}{
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        @media #{$md, $sm, $xs}{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &__title{
+        font-weight: 500;
+        font-size: 100px;
+        line-height: 1;    
+        margin-bottom: 6px;    
+        &-pre{
+            display: inline-block;
+            height: 24px;
+            line-height: 26px;
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 500;
+            background: var(--tp-theme-primary);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            padding: 0 7px;
+            margin-bottom: 12px;
+        }
+    }
+    &__list{
+        & span{
+            font-weight: 400;
+            font-size: 16px;
+            position: relative;
+            &:not(:last-child){
+                padding-right: 12px;
+                margin-right: 5px;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    right: 0;
+                    top: 55%;
+                    width: 4px;
+                    height: 4px;
+                    transform: translateY(-2px);
+                    background-color: #A8ACB0;
+                    border-radius: 50%;
+                }
+            }
+            & a{
+                &:hover{
+                    color: var(--tp-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+

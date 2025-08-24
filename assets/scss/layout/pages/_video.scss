@@ -1,0 +1,132 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.25 video css start
+/*----------------------------------------*/
+
+.tp-video{
+    &-wrap{
+        line-height: 0;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        margin: 0 auto;
+        height: 850px;
+        width: calc(100% - 30px);
+        @media #{$xl,$lg}{
+            height: 700px;
+            margin-bottom: 100px;
+        }
+        @media #{$md}{
+            margin-bottom: 100px;
+            height: 600px;
+        }
+        @media #{$xs}{
+            margin: 0;
+            margin-bottom: 40px;
+            height: 500px;
+            width: 100%;
+        }
+        &::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background: rgba(16, 16, 17, 0.20);
+            border-radius: 12px;
+
+        }
+        & .play-video{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            background-position: center;
+            background-size: cover;
+            margin: 0 auto;
+        }
+    }
+    &-content{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 70px;
+        z-index: 2;
+        @media #{$xs}{
+            padding: 30px;
+        }
+    }
+    &-subtitle{
+        color: var(--tp-common-white);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: -0.4px;
+        & span{
+            & svg{
+                color: var(--tp-common-white);
+                margin-right: 8px;
+                transform: translateY(-2px);
+                animation: rotate2 3s linear infinite;
+            }
+        }
+    }
+    &-title{
+        color: var(--tp-common-white);
+        font-size: 200px;
+        font-weight: 400;
+        line-height: 150px;
+        letter-spacing: -8px;
+        margin-bottom: 0;
+        @media #{$xl}{
+            font-size: 160px;
+        }
+        @media #{$lg}{
+            font-size: 150px;
+        }
+        @media #{$md}{
+            font-size: 120px;
+        }
+        @media #{$xs}{
+            font-size: 75px;
+        }
+    }
+    &-content{
+        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        & p{
+            margin-bottom: 0;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 26px;
+            letter-spacing: -0.4px;
+            color: var(--tp-common-white);
+            max-width: 410px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.tp-video-3{
+    &-wrap{
+        line-height: 0;
+        overflow: hidden;
+        & video{
+            height: 920px;
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+            @media #{$xl,$lg}{
+                height: 700px;
+            }
+            @media #{$md,$xs}{
+                height: 600px;
+            }
+        } 
+    }
+}

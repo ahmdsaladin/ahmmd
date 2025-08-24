@@ -1,0 +1,339 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.2 award css start
+/*----------------------------------------*/
+
+.tp-award{
+    &-title-box{
+        margin-bottom: 75px;
+    }
+    &-list-thumb{
+        &-wrap{
+            height: 80%;
+            width: 90%;
+            margin-left: 80px;
+            transform: scale(.8);
+            @media #{$xl}{
+                height: 70%;
+            }
+            @media #{$lg}{
+                height: 55%;
+            }
+        }
+        &-1,
+        &-2,
+        &-3,
+        &-4,
+        &-5,
+        &-6{
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            visibility: hidden;
+            position: absolute;
+        }
+    }
+    &-list{
+        &-wrap{
+            margin-left: 80px;
+            @media #{$md,$xs}{
+                margin-left: 0;
+            }
+            & .tp-award-list-item{
+                &:first-child{
+                    padding-top: 0;
+                }
+            }
+        }
+        &-item{
+            padding-bottom: 25px;
+            padding-top: 25px;
+            border-bottom: 1px solid var(--tp-border-1);
+            position: relative;
+            cursor: pointer;
+            &::after{
+                position: absolute;
+                content: "";
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 0%;
+                height: 1px;
+                background-color: var(--tp-common-black);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.7s ease-out 0s;
+            }
+            &:hover{
+                &::after{
+                    opacity: 1;
+                    visibility: visible;
+                    width: 100%;
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+        &-content{
+            &-left{
+                & span{
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1;
+                    margin-right: 115px;
+                    @media #{$xl}{
+                        margin-right: 45px;
+                    }
+                    @media #{$lg}{
+                        margin-right: 30px;
+                    }
+                    @media #{$md}{
+                        margin-right: 60px;
+                    }
+                    @media #{$xs}{
+                        margin-right: 15px;
+                    }
+                }
+                & p{
+                    margin-bottom: 0;
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 1;
+                    color: var(--tp-common-black);
+                    @media #{$xl}{
+                        font-size: 20px;
+                    }
+                    @media #{$lg}{
+                        font-size: 18px;
+                    }
+                    @media #{$xs}{
+                        font-size: 16px;
+                    }
+                }
+            }
+            &-right{
+                & span{
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1;
+                } 
+            }
+        }
+    }
+}
+
+#tp-award-thumb{
+    &.tp-award-list-thumb-1{
+        & .tp-award-list-thumb-1{
+            opacity: 1;
+            visibility: visible;
+            transform: scale(.9);
+        }
+    }
+    &.tp-award-list-thumb-2{
+        & .tp-award-list-thumb-2{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &.tp-award-list-thumb-3{
+        & .tp-award-list-thumb-3{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &.tp-award-list-thumb-4{
+        & .tp-award-list-thumb-4{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &.tp-award-list-thumb-5{
+        & .tp-award-list-thumb-5{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &.tp-award-list-thumb-6{
+        & .tp-award-list-thumb-6{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.tp-award-2{
+    &-area{
+        transition: .3s;
+        &.addclass{
+            background-color: var(--tp-common-black);
+        }
+    }
+    &-space{
+        margin-top: -100px;
+        padding: 80px 90px;
+        padding-bottom: 320px;
+        @media #{$xl}{
+            padding: 140px 20px;
+        }
+        @media #{$lg,$md}{
+            margin-top: 0;
+            padding: 140px 30px;
+        }
+        @media #{$xs}{
+            margin-top: 0;
+            padding: 140px 15px;
+        }
+    }
+    &-title{
+        font-size: 180px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -8px;
+        color: var(--tp-common-white);
+        @media #{$xxxxl}{
+            font-size: 170px;
+        }
+        @media #{$xxxl}{
+            font-size: 160px;
+        }
+        @media #{$xxl}{
+            font-size: 145px;
+        }
+        @media #{$xl,$lg}{
+            font-size: 120px;
+        }
+        @media #{$md}{
+            font-size: 95px;
+        }
+        @media #{$xs}{
+            font-size: 80px;
+        }
+        @media #{$sm}{
+            font-size: 70px;
+        }
+        & span{
+            padding-left: 200px;
+            @media #{$xxl}{
+                padding-left: 120px;
+            }
+            @media #{$lg}{
+                padding-left: 50px;
+            }
+            @media #{$md,$xs}{
+                padding-left: 0px;
+            }
+        }
+    }
+    &-subtitle{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1;
+        color: var(--tp-common-white);
+        padding-left: 110px;
+        margin-bottom: 100px;
+        display: inline-block;
+        @media #{$md}{
+            padding-left: 0;
+        }
+        @media #{$xs}{
+            padding-left: 0;
+            margin-bottom: 40px;
+        }
+    }
+    &-title-box{
+        margin-bottom: 60px;
+        & p{
+            margin-bottom: 0;
+            max-width: 300px;
+            color: rgba(255, 255, 255, 0.60);
+            position: absolute;
+            top: 0;
+            right: 140px;
+            @media #{$lg,$md}{
+                right: 0;
+            }
+            @media #{$xs}{
+                position: static;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    &-shape{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &-circle{
+        height: 400px;
+        width:  400px;
+        border-radius: 400px;
+        background: rgba(244, 213, 74, 0.70);
+        filter: blur(200px);
+        display: inline-block;
+    }
+    &-img{
+        position: absolute;
+        top: -150px;
+        left: -50px;
+        animation:float 5s ease-in-out infinite forwards;
+        @media #{$xl}{
+            top: -200px;
+        }
+        @media #{$xs}{
+            left: 50px;
+        }
+        & img{
+            max-width: inherit;
+            @media #{$xs}{
+                max-width: 80%;
+            }
+        }
+    }
+    &-btn-box{
+        margin-right: 290px;
+        @media #{$lg,$md,$xs}{
+            margin-right: 0;
+        }
+    }
+}
+
+.tp-line{
+    &-text{
+        font-size: 180px;
+        font-weight: 700;
+        line-height: 1;
+        text-transform: uppercase;
+        color: var(--tp-common-white);
+        white-space: nowrap;
+        animation: scrollText 20s infinite linear;
+        @media #{$md}{
+            font-size: 100px;
+        }
+        @media #{$xs}{
+            font-size: 50px;
+        }
+        & span{
+            color: transparent;
+            -webkit-text-stroke: 2px #BABABA;
+        }
+    }
+    &-text-2{
+        animation: scrollText-2 20s infinite linear;
+    }
+    &-text-space{
+        padding-top: 60px;
+        padding-bottom: 220px;
+        @media #{$md}{
+            padding-bottom: 130px;
+        }
+        @media #{$xs}{
+            padding-top: 0;
+            padding-bottom: 130px;
+        }
+    }
+}

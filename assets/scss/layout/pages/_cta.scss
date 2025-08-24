@@ -1,0 +1,160 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.7 cta css start
+/*----------------------------------------*/
+
+.tp-cta{
+    &-title-box{
+        padding-left: 70px;
+        @media #{$md,$xs}{
+            padding-left: 0;
+        }
+        & p{
+            max-width: 465px;
+            margin: 0 auto;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.70);
+            @media #{$md}{
+                margin: 0;
+                margin-bottom: 30px;
+                display: inline-block;
+            }
+        }
+    }
+    &-title{
+        font-size: 200px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -4px;
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-marcellus);
+        @media #{$lg,$md}{
+            font-size: 130px;
+        }
+        @media #{$xs}{
+            font-size: 80px;
+        }
+        @media #{$sm}{
+            font-size: 110px;
+        }
+        & span{
+            padding-left: 315px;
+            @media #{$md,$xs}{
+                padding-left: 0;
+            }
+        }
+    }
+    &-btn-box{
+        position: absolute;
+        bottom: 5%;
+        left: 12%;
+        @media #{$lg}{
+            bottom: 16%;
+            left: 25%;
+            transform: scale(.7);
+        }
+        @media #{$md}{
+            position: static;
+        }
+        @media #{$xs}{
+            position: static;
+            margin-top: 20px;
+        }
+    }
+    &-icon{
+        position: absolute;
+        top: 14%;
+        right: 19%;
+        @media #{$lg}{
+            top: 8%;
+            right: 29%;
+        }
+        @media #{$xs}{
+            top: -21%;
+        }
+        & img{
+            animation: rotate2 5s linear infinite;
+        }
+    }
+    &-circle{
+        & span{
+            height: 400px; 
+            width: 400px;
+            border-radius: 50%;
+            background: linear-gradient(-90deg, rgba(3, 0, 30, 0.50) 0%, rgba(115, 3, 192, 0.50) 33.33%, rgba(236, 56, 188, 0.50) 66.67%, rgba(253, 239, 249, 0.50) 100%);
+            filter: blur(15px);
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -1;
+        }
+    }
+}
+.tp-studio-cta{
+    &-title-box{
+        @media #{$xs}{
+            margin-bottom: 30px;
+        }
+    }
+    &-title{
+        font-size: 220px;
+        font-weight: 300;
+        line-height: 1;
+        color: var(--tp-common-black);
+        font-family: var(--tp-ff-shoulders);
+        @media #{$xxl}{
+            font-size: 130px;
+        }
+        @media #{$xl}{
+            font-size: 140px;
+        }
+        @media #{$lg}{
+            font-size: 120px;
+        }
+        @media #{$md}{
+            font-size: 110px;
+        }
+        @media #{$xs}{
+            font-size: 50px;
+        }
+        @media #{$sm}{
+            font-size: 70px;
+        }
+        & span{
+            font-weight: 700;
+        }
+    }
+    &-btn-box{
+        @media #{$xs}{
+            margin-bottom: 30px;
+        }
+    }
+    &-subscribe-link{
+        & a{
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1;
+            display: inline-block;
+            display: inline;
+            color: var(--tp-common-black);
+            background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+            background-size: 0% 2px, 0 2px;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 0.3s linear;
+            @media #{$xs}{
+                font-size: 20px;
+            }
+            & span{
+                margin-left: 10px;
+            }
+            &:hover{
+                background-size: 0% 2px, 100% 2px;
+            }
+        }
+    }
+}

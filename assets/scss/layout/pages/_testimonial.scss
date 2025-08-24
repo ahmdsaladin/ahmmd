@@ -1,0 +1,250 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.23 testimonial css start
+/*----------------------------------------*/
+
+.tp-testimonial{
+    &-item{
+        & p{
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 1.4;
+            text-align: center;
+            color: var(--tp-common-black);
+            padding: 0px 35px;
+            margin-bottom: 25px;
+            @media #{$xs}{
+                font-size: 23px;
+                padding: 0;
+            }
+        }
+        & span{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1;
+            text-align: center;
+            & em{
+                color: var(--tp-common-black);
+                font-style: normal;
+            }
+        }
+    }
+    &-arrow-box{
+        & button{
+            height: 60px;
+            width: 60px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid var(--tp-border-1);
+            transition: .3s;
+            & span{
+                color: var(--tp-common-black);
+                transition: .3s;
+            }
+            &:hover{
+                background-color: var(--tp-common-black);
+                border-color: var(--tp-common-black);
+                & span{
+                    color: var(--tp-common-white);
+                }
+            }
+        }
+    }
+    &-prev{
+        position: absolute;
+        left: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        @media #{$lg}{
+            left: 0;
+        }
+    }
+    &-next{
+        position: absolute;
+        right: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        @media #{$lg}{
+            right: 0;
+        }
+    }
+}
+
+.tp-studio-testimonial{
+    &-xs-space{
+        @media #{$xs}{
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    }
+    &-wrap{
+        @media #{$xxl,$xl}{
+            padding-top: 70px;
+        }
+        @media #{$lg,$md,$xs}{
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
+    }
+    &-shape{
+        & img{
+            animation: rotate2 8s linear infinite;
+        }
+    }
+    &-top-title{
+        & span{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1;
+            margin-right: 100px;
+            display: inline-block;
+            transform: translateY(6px);
+            color: var(--tp-common-white);
+            @media #{$xs}{
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &-title-box{
+        position: absolute;
+        bottom: -9%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        @media #{$xl}{
+            bottom: -2%;
+        }
+    }
+    &-title{
+        font-size: 220px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.03);
+        font-family: var(--tp-ff-shoulders);
+        @media #{$xxl}{
+            font-size: 150px;
+        }
+        @media #{$xl}{
+            font-size: 170px;
+        }
+        @media #{$lg}{
+            font-size: 150px;
+        }
+        @media #{$md}{
+            font-size: 120px;
+        }
+    }
+    &-text{
+        margin-bottom: 50px;
+        & p{
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-shoulders);
+            @media #{$xl}{
+                font-size: 35px;
+            }
+            @media #{$lg,$md}{
+                font-size: 27px;
+            }
+            @media #{$xs}{
+                font-size: 25px;
+            }
+        }
+    }
+    &-user{
+        &-info-box{
+            @media #{$xs}{
+                flex-wrap: wrap;
+            }
+        }
+        &-info{
+            @media #{$xs}{
+                margin-right: 30px;
+            }
+        }
+        &-name{
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--tp-common-white);
+        }
+        & span{
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+            color: rgba(245, 247, 245, 0.70);  
+        }
+    }
+    &-line{
+        & span{
+            height: 1px;
+            width: 150px;
+            margin: 0px 25px;
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+    }
+    &-item{
+        padding-right: 30px;
+        @media #{$lg,$md,$xs}{
+            padding-right: 0;
+        }
+    }
+    &-arrow{
+        position: absolute;
+        bottom: 3%;
+        left: -29%;
+        @media #{$xs}{
+            bottom: -25%;
+            left: 0;
+        }
+    }
+}
+.tp-studio-prev span, .tp-studio-next span {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 26px;
+	height: 1.8px;
+	background: var(--tp-common-white);
+	font-size: 0;
+	transition: all 0.25s;
+}
+.tp-studio-prev:hover span, .tp-studio-next:hover span{
+    width: 50px;
+}
+.tp-studio-next span {
+	left: 0;
+}
+.tp-studio-prev span {
+	right: 0;
+}
+.tp-studio-prev{
+    margin-right: 30px;
+}
+.tp-studio-prev span svg {
+	left: 0;
+}
+.tp-studio-next span svg {
+	right: 0;
+}
+.tp-studio-prev svg, .tp-studio-next svg {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+}
+.tp-studio-prev, .tp-studio-next {
+	position: relative;
+	width: 30px;
+	height: 40px;
+	font-size: 0;
+}

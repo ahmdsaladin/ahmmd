@@ -1,0 +1,27 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.6 Header Style 6
+/*----------------------------------------*/
+
+.tp-header-6{
+    &-menu-box{
+        & span{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 14px;
+            color: var(--tp-common-white);
+        }
+    }
+    &-menubar{
+        margin-left: 18px;
+        & span{
+            height: 2px;
+            width: 36px;
+            display: inline-block;
+            background-color: var(--tp-common-white);
+            display: table;
+            margin: 8px 0;
+        }
+    }
+}

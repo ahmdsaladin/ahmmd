@@ -1,0 +1,117 @@
+
+body.tp-magic-cursor #magic-cursor {
+    display: block;
+}
+
+#magic-cursor {
+	position: absolute;
+	display: none;
+	width: 10px;
+	height: 10px;
+	pointer-events: none;
+	z-index: 99999;
+	opacity: 0;
+	top: 0;
+	left: 0;
+}
+
+#ball {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	pointer-events: none;
+	background-color: var(--tp-common-black);
+	border-radius: 50%;
+	justify-content: center;
+    mix-blend-mode: difference;
+	color: transparent;
+}
+
+
+/* Ball view 
+============= */
+#ball .ball-view {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	padding: 0 5px;
+	font-size: 15px;
+	font-weight: 500;
+	color: #000;
+	line-height: 1.3;
+	text-align: center;
+	transform: scale(0);
+}
+
+/* Ball drag 
+============= */
+#ball .ball-drag {
+	position: absolute;
+	display: block;
+	width: 100%;
+	padding: 0 5px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #000;
+	line-height: 1.2;
+	text-align: center;
+	transition: all 0.3s;
+}
+#ball .ball-drag::before,
+#ball .ball-drag::after {
+	position: absolute;
+	top: 50%;
+	margin-top: -5px;
+	font-size: 19px;
+	color: #FFF;
+	height: 10px;
+	line-height: 10px;
+	font-family: "Font Awesome 6 Pro";
+	font-weight: 900;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+#ball .ball-drag::before {
+	content: "\f104"; /* Font Awesome */
+	left: 0;
+	transform: translate3d(-30px, 0, 0);
+	transition: all 0.25s;
+}
+#ball .ball-drag::after {
+	content: "\f105"; /* Font Awesome */
+	right: 0;
+	transform: translate3d(30px, 0, 0);
+	transition: all 0.25s;
+}
+#ball.with-blur {
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);		
+}
+
+
+/* Ball close 
+============== */
+#ball.ball-close-enabled {
+	opacity: 1 !important;
+}
+#ball .ball-close {
+	position: absolute;
+	padding: 0 5px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #000;
+	line-height: 1;
+	text-align: center;
+}
+
+.tp-magnetic-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

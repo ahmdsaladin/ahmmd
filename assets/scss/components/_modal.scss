@@ -1,0 +1,190 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.14 Modal
+/*----------------------------------------*/
+.modal .modal-dialog {
+	width: 100%;
+	max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.modal-wrapper{
+    position: relative;
+    z-index: 999999999;
+}
+.modal {
+	overflow-y: scroll;
+	overflow-x: hidden;
+    --bs-modal-border-width: 0;
+    --bs-modal-border-radius: 0;
+}
+.btn-close{
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    z-index: 99999999999;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: var(--tp-common-black);
+    background-color: #fff !important;
+    border: 1px solid rgba(25, 25, 26, 0.20);
+    opacity: 1;
+    transition: .3s;
+    &:hover{
+        border-color: var(--tp-common-black) !important;
+        transform: rotate(180deg);
+    }
+}
+.btn-close:focus {
+	outline: 0;
+	box-shadow: none;
+	opacity: 1;
+}
+.modal-body {
+	padding: 0;
+}
+.modal-header {
+	padding: 0;
+	border-bottom: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+
+.tp-product-modal{
+    & .modal-dialog{
+        width: 1200px;
+    }
+    & .modal-content {
+        padding: 50px;
+    }
+    & .tp-product-modal-close-btn {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+}
+
+.tp-product-details{
+    &-content{
+        position: relative;
+        padding: 50px 25px 40px;
+    }
+    &-category{
+        &  span {
+            font-size: 16px;
+            line-height: 1;
+            font-family: var(--tp-ff-marcellus);
+        }
+    }
+    &-title {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1;
+        margin-bottom: 15px;
+        font-family: var(--tp-ff-marcellus);
+    }
+    &-reviews{
+        & span{
+            font-family: var(--tp-ff-marcellus); 
+        }
+    }
+    &-stock{
+        margin-right: 12px;
+        & span{
+            display: inline-block;
+            font-size: 15px;
+            line-height: 1;
+            padding: 4px 12px;
+            color: var(--tp-common-black);
+            font-family: var(--tp-ff-marcellus);
+            background-color: rgba($color: #0989FF, $alpha: .06);
+        }
+    }
+    &-rating{
+        margin-right: 11px;
+        @include flexbox();
+        align-items: center;
+        & span{
+            font-size: 12px;
+            color: #FFB21D;
+            &:not(:last-child){
+                margin-right: 3px;
+            }
+        }
+    }
+    &-price{
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: -0.02em;
+        color: var(--tp-common-black);
+        &.new-price{
+            color: var(--tp-common-black);
+        }
+        &.old-price{
+            font-weight: 400;
+            font-size: 16px;
+            text-decoration-line: line-through;
+            color: #767A7D;
+        }
+    }
+    &-wrapper > p {
+        font-size: 15px;
+        line-height: 1.7;
+        font-family: var(--tp-ff-marcellus);
+        & span {
+            font-weight: 500;
+            color: var(--tp-common-black);
+            font-family: var(--tp-ff-marcellus);
+        }
+    }
+    &-price {
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: -0.02em;
+        color: var(--tp-common-black);
+        font-family: var(--tp-ff-marcellus);
+        &.old-price {
+            font-weight: 400;
+            font-size: 16px;
+            text-decoration-line: line-through;
+            color: #767A7D;
+        }
+    }
+    &-action-title {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 13px;
+        font-family: var(--tp-ff-marcellus);
+    }
+    &-action{
+        &-wrapper{
+            margin-bottom: 17px;
+        }
+        &-sm{
+            padding-bottom: 9px;
+            border-bottom: 1px solid #EAEBED;
+            margin-bottom: 25px;
+            &-btn{
+                font-size: 16px;
+                margin-bottom: 10px;
+                font-family: var(--tp-ff-marcellus);
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+                & i,
+                & svg{
+                    margin-right: 2px;
+                }
+
+                &:hover{
+                    color: var(--tp-common-black);
+                }
+            }
+        }
+    }
+}

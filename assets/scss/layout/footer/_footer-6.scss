@@ -1,0 +1,180 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.6 Footer Style 6
+/*----------------------------------------*/
+
+.tp-footer-6{
+    &-widget{
+        &-title{
+            font-size: 23px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 22px;
+            color: #bbb;
+            font-family: var(--tp-ff-marcellus);
+        }
+        &.footer-col-6{
+            &-2{
+                padding-left: 40px;
+                @media #{$md,$xs}{
+                    padding-left: 0;
+                }
+            }
+            &-3{
+                padding-left: 15px;
+                @media #{$md,$xs}{
+                    padding-left: 0;
+                }
+            }
+            &-4{
+                padding-left: 70px;
+                @media #{$lg,$md,$xs}{
+                    padding-left: 0;
+                }
+            }
+        }
+        &-wrap{
+            margin-bottom: 20px;
+        }
+    }
+    &-logo{
+        margin-bottom: 25px;
+    }
+    &-talk{
+        margin-bottom: 25px;
+        & span{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-marcellus);
+        }
+        & h4{
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 0;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-marcellus);
+        }
+    }
+    &-contact{
+        &-item{
+            margin-bottom: 10px;
+        }
+        &-icon{
+            & span{
+                margin-right: 10px;
+                transform: translateY(-2px);
+                display: inline-block;
+            }
+        }
+        &-content{
+            & a{
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1;
+                color: rgba(255, 255, 255, 0.70);
+                font-family: var(--tp-ff-marcellus);
+            }
+        }
+    }
+    &-list{
+        & ul{
+            & li{
+                list-style-type: none;
+                position: relative;
+                padding-left: 15px;
+                margin-bottom: 9px;
+                &::after{
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    width: 4px;
+                    height: 4px;
+                    content: "";
+                    border-radius: 50%;
+                    background-color: #BBBBBB;
+                }
+                & a{
+                    font-size: 17px;
+                    font-weight: 400;
+                    line-height: 1;
+                    color: rgba(255, 255, 255, 0.70);
+                    font-family: var(--tp-ff-marcellus);
+                }
+            }
+        }
+    }
+    &-input{
+        &-box{
+            margin-bottom: 25px;
+            & label{
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1;
+                color: rgba(255, 255, 255, 0.70);
+                font-family: var(--tp-ff-marcellus);
+                margin-bottom: 20px;
+            }
+        }
+        & input{
+            color: #7D7F82;
+            font-size: 14px;
+            font-weight: 400;
+            background-color: transparent;
+            font-family: var(--tp-ff-marcellus);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0px 1px 2px 0px rgba(1, 15, 28, 0.10);
+            padding-right: 140px;
+            @include placeholder{
+                color: #7D7F82;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            &:focus{
+                border-color: #7D7F82;
+            }
+        }
+        & .tp-btn-subscribe{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+    }
+    &-social{
+        &-title{
+            color: #BBB;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 15px;
+            font-family: var(--tp-ff-marcellus);
+        }
+        & a{
+            color: #BBB;
+            height: 38px;
+            width: 38px;
+            margin-right: 4px;
+            line-height: 38px;
+            text-align: center;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0px 1px 2px 0px rgba(1, 15, 28, 0.10);
+            &:hover{
+                background-color: var(--tp-common-white);
+                color: var(--tp-common-black);
+                border-color: var(--tp-common-white);
+            }
+        }
+    }
+}
+
+.tp-footer-6-logo{
+    & img{
+        width: 85px;
+        height: 100%;
+    }
+}

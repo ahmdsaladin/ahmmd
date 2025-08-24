@@ -1,0 +1,21 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.9 Header Style 9
+/*----------------------------------------*/
+
+.tp-header-style{
+    &-9{
+        & .tp-header-6-menu-box{
+            & span{
+                color: var(--tp-common-black);
+                font-family: var(--tp-ff-marcellus);
+            }
+        }
+        & .tp-header-6-menubar{
+            & span{
+                background-color: var(--tp-common-black);
+            }
+        }
+    }
+}

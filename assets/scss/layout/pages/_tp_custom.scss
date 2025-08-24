@@ -1,0 +1,12 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.24 tp custom css
+/*----------------------------------------*/
+
+.tp-text-black{
+	color: var(--tp-common-black);
+}
+.tp-text-white{
+	color: var(--tp-common-white);
+}

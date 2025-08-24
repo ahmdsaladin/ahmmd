@@ -1,0 +1,20 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.10 Header Style 10
+/*----------------------------------------*/
+
+.tp-header-10{
+    &-menubar{
+        & button{
+            & span{
+                height: 2px;
+                width: 36px;
+                display: table;
+                margin: 8px 0;
+                transform: translateY(5px);
+                background-color: var(--tp-common-white);
+            }
+        }
+    }
+}

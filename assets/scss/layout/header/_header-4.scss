@@ -1,0 +1,66 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.4 Header Style 4
+/*----------------------------------------*/
+
+
+.tp-header-4{
+    &-area{
+        &.header-sticky{
+            background-color: rgba(25, 25, 26, 0.85);
+            & .tp-header-4-menu > nav > ul > li > a {
+                padding: 32px 0;
+            }
+        }
+    }
+    &-mob-space{
+        @media #{$lg,$md,$xs}{
+            padding: 15px 0;
+        }
+    }
+    &-bar{
+        height: 44px;
+        width: 44px;
+        line-height: 44px;
+        font-size: 20px;
+        text-align: center;
+        display: inline-block;
+        color: var(--tp-common-white);
+        border: 1px solid var(--tp-common-white);
+        transition: .3s;
+        &:hover{
+            background-color: var(--tp-common-white);
+            color: var(--tp-common-black);
+        }
+    }
+    &-menu{
+        & > nav{
+            & > ul{
+                & > li{
+                    list-style-type: none;
+                    display: inline-block;
+                    margin-right: 45px;
+                    @media #{$xl}{
+                        margin-right: 35px;
+                    }
+                    @media #{$lg}{
+                        margin-right: 25px;
+                    }
+                    & > a{
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 1;
+                        padding: 43px 0;
+                        display: inline-block;
+                        text-transform: uppercase;
+                        color: var(--tp-common-white);
+                    }
+                }
+            }
+        }
+    }
+    &-btn{
+        line-height: 0;
+    }
+}
