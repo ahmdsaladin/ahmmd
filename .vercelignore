@@ -1,0 +1,5 @@
+assets/scss/
+*.md
+.git/
+.gitignore
+README.md
