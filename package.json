@@ -1,13 +1,48 @@
 {
   "name": "ahmmd-portfolio",
-  "version": "1.0.0",
-  "description": "Static HTML portfolio website",
+  "version": "1.2.0",
+  "description": "High-performance static HTML portfolio website with advanced optimizations",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static site - no build required'",
-    "start": "echo 'Static site - no server required'"
+    "dev": "python -m http.server 8000",
+    "build": "npm run minify:css && npm run minify:js && npm run optimize:images",
+    "minify:css": "echo 'CSS minification - use external tools like cssnano'",
+    "minify:js": "echo 'JS minification - use external tools like terser'",
+    "optimize:images": "echo 'Image optimization - use tools like imagemin'",
+    "analyze": "echo 'Run Lighthouse CI for performance analysis'",
+    "deploy": "vercel --prod",
+    "preview": "vercel",
+    "lighthouse": "lighthouse http://localhost:8000 --output html --output-path lighthouse-report.html",
+    "performance": "npm run dev & sleep 3 && npm run lighthouse"
   },
-  "author": "Ahmad Saladin",
+  "keywords": [
+    "portfolio",
+    "static-site",
+    "performance",
+    "web-vitals",
+    "lighthouse",
+    "vercel"
+  ],
+  "author": "Ahmad Saladin <sotahmed100@gmail.com>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "lighthouse": "^11.0.0"
+  },
+  "performance": {
+    "budgets": {
+      "initialLoad": "250kb",
+      "totalLoad": "2mb",
+      "images": "1mb",
+      "scripts": "500kb"
+    },
+    "targets": {
+      "lighthouse": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      }
+    }
+  }
 }
